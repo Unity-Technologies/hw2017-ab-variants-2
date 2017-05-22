@@ -1,0 +1,6 @@
+[submodule "Assets/Packages/ResourceManager"]
+	path = Assets/Packages/ResourceManager
+	url = git@github.com:Unity-Technologies/ResourceManager.git
+[submodule "Assets/Packages/AssetBundles-BuildPipeline"]
+	path = Assets/Packages/AssetBundles-BuildPipeline
+	url = git@github.com:Unity-Technologies/AssetBundles-BuildPipeline.git
