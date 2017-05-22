@@ -4,3 +4,6 @@
 [submodule "Assets/Packages/AssetBundles-BuildPipeline"]
 	path = Assets/Packages/AssetBundles-BuildPipeline
 	url = https://github.com/Unity-Technologies/AssetBundles-BuildPipeline.git
+[submodule "Assets/Packages/AssetBundles-Browser"]
+	path = Assets/Packages/AssetBundles-Browser
+	url = https://github.com/Unity-Technologies/AssetBundles-Browser.git
