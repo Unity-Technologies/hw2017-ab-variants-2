@@ -5,6 +5,7 @@ using UnityEditor;
 using System.IO;
 using UnityEditor.Build.AssetBundle;
 using UnityEditor.Experimental.Build.AssetBundle;
+using UnityEditor.Experimental.Build.Player;
 using System.Linq;
 
 [InitializeOnLoad]
@@ -42,25 +43,6 @@ public class MyBuildProcess
         }
     }
 
-    public static string scriptsFolder
-    {
-        get
-        {
-            var buildTarget = EditorUserBuildSettings.activeBuildTarget;
-            var buildLocation = EditorUserBuildSettings.GetBuildLocation(buildTarget);
-
-            switch(buildTarget)
-            {
-                case BuildTarget.StandaloneOSXIntel:
-                case BuildTarget.StandaloneOSXIntel64:
-                case BuildTarget.StandaloneOSXUniversal:
-                    return Path.Combine(buildLocation, "Contents/Resources/Data/Managed");
-                default:
-                    return "";
-            }
-        }
-    }
-
     [MenuItem("AssetBundles/Build Bundles")]
     public static void BuildAssetBundles()
     {
@@ -71,25 +53,57 @@ public class MyBuildProcess
 
         Directory.CreateDirectory(outputPath);
 
+        var results = CompileScripts();
+       
         var settings = new BuildSettings();
         settings.target = EditorUserBuildSettings.activeBuildTarget;
         settings.group = EditorUserBuildSettings.selectedBuildTargetGroup;
-        settings.scriptsFolder = scriptsFolder;
-        if(!Directory.Exists(settings.scriptsFolder))
+        settings.typeDB = results.typeDB;
+        settings.outputFolder = outputPath;
+
+        BuildInput input;
+        AddressableAssetSettings.GetDefault().GenerateBuildInput(out input);
+
+        var scenes = EditorBuildSettings.scenes;
+        var sceneInput = new BuildInput();
+        sceneInput.definitions = new BuildInput.Definition[scenes.Length];
+        for(var x = 0; x < sceneInput.definitions.Length; x++)
         {
-            Debug.LogError("Script path " + settings.scriptsFolder + " doesn't exist!");
+            var def = new BuildInput.Definition();
+            def.assetBundleName = scenes[x].path.Replace("/", "_");
+            var addressableAsset = new BuildInput.AddressableAsset();
+            addressableAsset.address = scenes[x].path;
+            addressableAsset.asset = scenes[x].guid;
+            def.explicitAssets = new BuildInput.AddressableAsset[] { addressableAsset };
+            sceneInput.definitions[x] = def;
+        }
+
+        if(sceneInput.definitions.Length > 0)
+            ArrayUtility.AddRange<BuildInput.Definition>(ref input.definitions, sceneInput.definitions);
+
+        if(input.definitions.Length == 0)
+        {
+            Debug.Log("No asset bundles to build.");
             return;
         }
 
-        settings.outputFolder = outputPath;
-
         BuildOutput output;
-        if(AssetBundleBuildPipeline.BuildAssetBundles(settings, out output))
+        if(AssetBundleBuildPipeline.BuildAssetBundles(settings, input, out output))
         {
             var bundlesToCopy = new List<string>(output.results.Select(x => x.assetBundleName));
 
             CopyBundlesToStreamingAssets(bundlesToCopy);
         }
+    }
+    
+    public static ScriptCompilationResult CompileScripts()
+    {
+        ScriptCompilationSettings input = new ScriptCompilationSettings();
+        input.target = EditorUserBuildSettings.activeBuildTarget;
+        input.targetGroup = EditorUserBuildSettings.selectedBuildTargetGroup;
+        input.options = ScriptCompilationOptions.None;
+        input.outputFolder = "Library/ScriptAssemblies";
+        return PlayerBuildInterface.CompilePlayerScripts(input);
     }
 
     static void CopyBundlesToStreamingAssets(List<string> bundlesToCopy)
@@ -109,4 +123,13 @@ public class MyBuildProcess
             File.Copy(copyFromPath, copyToPath);
         }
     }
+
+//    static ContentCatalog GenerateContentCatalog()
+//    {
+//    }
+//
+//    static BuildInput GenerateBuildInputFromContentCatalog(ContentCatalog catalog)
+//    {
+//    }
+
 }
