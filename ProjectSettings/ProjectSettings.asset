@@ -4,14 +4,14 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  productGUID: e055a3c084d474e9b81d8a1b4d510fbf
+  productGUID: b139be7faf88dac48bf352a87f91a3ec
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Hackweek 2017 Asset Variants
+  productName: UniteEurope16TrainingDay
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -49,16 +49,16 @@ PlayerSettings:
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_MTRendering: 1
-  m_MobileMTRendering: 0
-  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  m_MobileMTRendering: 1
+  m_StackTraceTypes: 020000000200000002000000020000000200000001000000
   iosShowActivityIndicatorOnLoading: -1
-  androidShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: 2
   tizenShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -66,7 +66,7 @@ PlayerSettings:
   disableDepthAndStencilBuffers: 0
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
-  runInBackground: 0
+  runInBackground: 1
   captureSingleScreen: 0
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
@@ -85,7 +85,7 @@ PlayerSettings:
   xboxEnableKinect: 0
   xboxEnableKinectAutoTracking: 0
   xboxEnableFitness: 0
-  visibleInBackground: 1
+  visibleInBackground: 0
   allowFullscreenSwitch: 1
   graphicsJobMode: 0
   macFullscreenMode: 2
@@ -117,11 +117,11 @@ PlayerSettings:
   wiiUAllowScreenCapture: 1
   wiiUControllerCount: 0
   m_SupportedAspectRatios:
-    4:3: 1
-    5:4: 1
-    16:10: 1
+    4:3: 0
+    5:4: 0
+    16:10: 0
     16:9: 1
-    Others: 1
+    Others: 0
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
@@ -142,10 +142,16 @@ PlayerSettings:
   m_ColorGamuts: 00000000
   targetPixelDensity: 0
   resolutionScalingMode: 0
-  applicationIdentifier: {}
-  buildNumber: {}
+  applicationIdentifier:
+    Android: com.unity.TrainingDay2016
+    Standalone: unity.DefaultCompany.UniteEurope16TrainingDay
+    Tizen: com.unity.TrainingDay2016
+    iOS: com.unity.TrainingDay2016
+    tvOS: com.unity.TrainingDay2016
+  buildNumber:
+    iOS: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 16
+  AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -162,10 +168,10 @@ PlayerSettings:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-  iOSTargetOSVersionString: 
+  iOSTargetOSVersionString: 6.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
-  tvOSTargetOSVersionString: 
+  tvOSTargetOSVersionString: 9.0
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -210,7 +216,7 @@ PlayerSettings:
   iOSMetalForceHardShadows: 0
   metalEditorSupport: 1
   metalAPIValidation: 1
-  iOSRenderExtraFrameOnPause: 0
+  iOSRenderExtraFrameOnPause: 1
   appleDeveloperTeamID: 
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
@@ -229,10 +235,170 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 128
+      m_Height: 128
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 0f2b736c8ab8e324a9038a73543ca6da, type: 3}
+      m_Width: 1024
+      m_Height: 1024
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 512
+      m_Height: 512
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 256
+      m_Height: 256
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 128
+      m_Height: 128
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 48
+      m_Height: 48
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 32
+      m_Height: 32
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 16
+      m_Height: 16
+  - m_BuildTarget: Android
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 0f2b736c8ab8e324a9038a73543ca6da, type: 3}
+      m_Width: 192
+      m_Height: 192
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 144
+      m_Height: 144
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 96
+      m_Height: 96
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 72
+      m_Height: 72
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 48
+      m_Height: 48
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 36
+      m_Height: 36
+  - m_BuildTarget: iPhone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 0f2b736c8ab8e324a9038a73543ca6da, type: 3}
+      m_Width: 180
+      m_Height: 180
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 167
+      m_Height: 167
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 152
+      m_Height: 152
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 144
+      m_Height: 144
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 120
+      m_Height: 120
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 114
+      m_Height: 114
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 76
+      m_Height: 76
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 72
+      m_Height: 72
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 57
+      m_Height: 57
+  - m_BuildTarget: Tizen
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 0f2b736c8ab8e324a9038a73543ca6da, type: 3}
+      m_Width: 117
+      m_Height: 117
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
-  m_BuildTargetVRSettings: []
+  m_BuildTargetVRSettings:
+  - m_BuildTarget: Android
+    m_Enabled: 0
+    m_Devices:
+    - Oculus
+  - m_BuildTarget: Metro
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: N3DS
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: PS3
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: PS4
+    m_Enabled: 0
+    m_Devices:
+    - PlayStationVR
+  - m_BuildTarget: PSM
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: PSP2
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: SamsungTV
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: Standalone
+    m_Enabled: 0
+    m_Devices:
+    - Oculus
+  - m_BuildTarget: Tizen
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: WebGL
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: WebPlayer
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: WiiU
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: Xbox360
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: XboxOne
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: iOS
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: tvOS
+    m_Enabled: 0
+    m_Devices: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   webPlayerTemplate: APPLICATION:Default
@@ -269,7 +435,7 @@ PlayerSettings:
   switchSocketConcurrencyLimit: 14
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
-  switchApplicationID: 0x01004b9000490000
+  switchApplicationID: 0x0005000C10000001
   switchNSODependencies: 
   switchTitleNames_0: 
   switchTitleNames_1: 
@@ -323,7 +489,7 @@ PlayerSettings:
   switchAccessibleURLs: 
   switchLegalInformation: 
   switchMainThreadStackSize: 1048576
-  switchPresenceGroupId: 0x01004b9000490000
+  switchPresenceGroupId: 0x0005000C10000001
   switchLogoHandling: 0
   switchReleaseVersion: 0
   switchDisplayVersion: 1.0.0
@@ -350,7 +516,7 @@ PlayerSettings:
   switchRatingsInt_9: 0
   switchRatingsInt_10: 0
   switchRatingsInt_11: 0
-  switchLocalCommunicationIds_0: 0x01004b9000490000
+  switchLocalCommunicationIds_0: 0x0005000C10000001
   switchLocalCommunicationIds_1: 
   switchLocalCommunicationIds_2: 
   switchLocalCommunicationIds_3: 
@@ -373,7 +539,7 @@ PlayerSettings:
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
-  ps4ParentalLevel: 11
+  ps4ParentalLevel: 1
   ps4ContentID: ED1633-NPXX51362_00-0000000000000000
   ps4Category: 0
   ps4MasterVersion: 01.00
@@ -406,7 +572,7 @@ PlayerSettings:
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
-  ps4Passcode: 47XWS2qVOw5lxuBEBNue7b9PZS0hoI6p
+  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -417,7 +583,7 @@ PlayerSettings:
   ps4ReprojectionSupport: 0
   ps4UseAudio3dBackend: 0
   ps4SocialScreenEnabled: 0
-  ps4ScriptOptimizationLevel: 0
+  ps4ScriptOptimizationLevel: 3
   ps4Audio3dVirtualSpeakerCount: 14
   ps4attribCpuUsage: 0
   ps4PatchPkgPath: 
@@ -452,7 +618,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-  psp2PackagePassword: gabi9UOuSpM2Tlh01vOzwvSikHFswuzl
+  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
@@ -498,32 +664,52 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols: {}
-  platformArchitecture: {}
-  scriptingBackend: {}
-  incrementalIl2cppBuild: {}
+  scriptingDefineSymbols:
+    1: CROSS_PLATFORM_INPUT
+    2: CROSS_PLATFORM_INPUT
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    14: MOBILE_INPUT
+    15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    17: MOBILE_INPUT
+    20: MOBILE_INPUT
+  platformArchitecture:
+    iOS: 2
+    tvOS: 1
+  scriptingBackend:
+    Android: 0
+    Metro: 2
+    Standalone: 0
+    WebGL: 1
+    WebPlayer: 0
+    iOS: 1
+    tvOS: 1
+  incrementalIl2cppBuild:
+    iOS: 1
+    tvOS: 0
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Hackweek 2017 Asset Variants
+  metroPackageName: UniteEurope16TrainingDay
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Hackweek 2017 Asset Variants
+  metroApplicationDescription: UniteEurope16TrainingDay
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: UniteEurope16
   metroCommandLineArgsFile: 
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
   metroWideTileShowName: 0
   metroDefaultTileSize: 1
-  metroTileForegroundText: 2
+  metroTileForegroundText: 1
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
@@ -539,7 +725,7 @@ PlayerSettings:
   tizenGPSPermissions: 0
   tizenMicrophonePermissions: 0
   tizenDeploymentTarget: 
-  tizenDeploymentTargetType: -1
+  tizenDeploymentTargetType: 0
   tizenMinOSVersion: 1
   n3dsUseExtSaveData: 0
   n3dsCompressStaticMem: 1
@@ -585,8 +771,17 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
-  facebookSdkVersion: 7.9.4
+  cloudServicesEnabled:
+    Analytics: 0
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Game_Performance: 0
+    Hub: 0
+    Purchasing: 0
+    UNet: 0
+    Unity_Ads: 0
+  facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: 
   projectName: 
