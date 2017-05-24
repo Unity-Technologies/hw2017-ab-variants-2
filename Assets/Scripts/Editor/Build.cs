@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -129,11 +129,30 @@ public class MyBuildProcess
         var locations = new List<ResourceManagerImpl.ResourceLocation>();
         foreach (var cmd in commandSet.commands)
         {
-            var assetNames = AssetDatabase.GetAssetPathsFromAssetBundle(cmd.assetBundleName);
-            locations.Add(new ResourceManagerImpl.ResourceLocation(cmd.assetBundleName, Path.Combine(relativeStreamingAssetsBundlePath, cmd.assetBundleName), kLocalAssetBundle, cmd.assetBundleDependencies));
+            if(!string.IsNullOrEmpty(cmd.scene))
+            {
+                // Must add the scene bundle as a dependency on the scene asset
+                var deps = new List<string>(cmd.assetBundleDependencies);
+                deps.Add(cmd.assetBundleName);
 
-            foreach (var info in cmd.explicitAssets)
-                locations.Add(new ResourceManagerImpl.ResourceLocation(info.address, info.address, kBundledAsset, new string[] { cmd.assetBundleName }));
+                for(int x = 0; x < deps.Count; x++)
+                    deps[x] = Path.Combine(relativeStreamingAssetsBundlePath, deps[x]);
+
+                var id = Path.GetFileNameWithoutExtension(cmd.scene);
+                var name = string.Concat("Scene::", id);
+
+                locations.Add(new ResourceManagerImpl.ResourceLocation(name, id, kLocalAssetBundle, deps.ToArray()));
+
+            }
+            else if(cmd.explicitAssets.Length > 0)
+            {
+                locations.Add(new ResourceManagerImpl.ResourceLocation(cmd.assetBundleName, Path.Combine(relativeStreamingAssetsBundlePath, cmd.assetBundleName), kLocalAssetBundle, cmd.assetBundleDependencies));
+
+                foreach (var info in cmd.explicitAssets)
+                    locations.Add(new ResourceManagerImpl.ResourceLocation(info.address, info.address, kBundledAsset, new string[] { cmd.assetBundleName }));
+
+            }
+
         }
 
         var cc = ScriptableObject.CreateInstance<ContentCatalog>();
@@ -142,6 +161,9 @@ public class MyBuildProcess
         
         if (File.Exists("Assets/Resources/ContentCatalog.asset"))
             File.Delete("Assets/Resources/ContentCatalog.asset");
+
+        Directory.CreateDirectory("Assets/Resources");
+
         AssetDatabase.CreateAsset(cc, "Assets/Resources/ContentCatalog.asset");
     }
 
@@ -158,13 +180,4 @@ public class MyBuildProcess
         AssetImporter importer = AssetImporter.GetAtPath(assetVariantMapsPath);
         importer.assetBundleName = "AssetVariantMapsBundle";
     }
-
-//    static ContentCatalog GenerateContentCatalog()
-//    {
-//    }
-//
-//    static BuildInput GenerateBuildInputFromContentCatalog(ContentCatalog catalog)
-//    {
-//    }
-
 }

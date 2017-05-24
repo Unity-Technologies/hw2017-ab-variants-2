@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 112000001, guid: b9c9699ecd2ffa440ac58934720b093a,
     type: 2}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -108,6 +108,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &312000294
 GameObject:
@@ -296,8 +298,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313547315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 462, y: 271.5, z: 0}
+  m_LocalScale: {x: 0.48125, y: 0.48125, z: 0.48125}
   m_Children:
   - {fileID: 1335123713}
   - {fileID: 1708470358}
@@ -386,7 +388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -495,7 +497,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -721,7 +723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -848,7 +850,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1335123712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 872.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 523830081}
@@ -1023,7 +1025,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 22480890, guid: 6c7afed0b4d56a047a9a515074a2e83f, type: 2}
       propertyPath: m_LocalPosition.z
