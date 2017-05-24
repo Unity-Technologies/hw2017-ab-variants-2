@@ -7,6 +7,7 @@ using UnityEditor.Build.AssetBundle;
 using UnityEditor.Experimental.Build.AssetBundle;
 using UnityEditor.Experimental.Build.Player;
 using System.Linq;
+using UnityEngine.ResourceManagement;
 
 [InitializeOnLoad]
 public class MyBuildProcess
@@ -34,12 +35,19 @@ public class MyBuildProcess
         }
     }
 
+    public static string relativeStreamingAssetsBundlePath
+    {
+        get
+        {
+            return Path.Combine("bundles", EditorUserBuildSettings.activeBuildTarget.ToString());
+        }
+    }
+
     public static string streamingAssetsBundlePath
     {
         get
         {
-            var path = Path.Combine(Application.streamingAssetsPath, "bundles");
-            return Path.Combine(path, EditorUserBuildSettings.activeBuildTarget.ToString());
+            return Path.Combine(Application.streamingAssetsPath, relativeStreamingAssetsBundlePath);
         }
     }
 
@@ -48,10 +56,8 @@ public class MyBuildProcess
     {
         var outputPath = bundleBuildPath;
         
-        if(Directory.Exists(outputPath))
-            Directory.Delete(bundleBuildPath, true);
-
-        Directory.CreateDirectory(outputPath);
+        if(!Directory.Exists(outputPath))
+            Directory.CreateDirectory(outputPath);
 
         var results = CompileScripts();
        
@@ -76,8 +82,9 @@ public class MyBuildProcess
             if(AssetBundleBuildPipeline.ExecuteCommandSet(settings, commands, out output))
             {
                 var bundlesToCopy = new List<string>(output.results.Select(x => x.assetBundleName));
-
                 CopyBundlesToStreamingAssets(bundlesToCopy);
+
+                CreateContentCatalog(commands);
             }
         }
     }
@@ -111,6 +118,30 @@ public class MyBuildProcess
 
             File.Copy(copyFromPath, copyToPath);
         }
+    }
+
+    static void CreateContentCatalog(BuildCommandSet commandSet)
+    {
+        const string kLocalAssetBundle = "localassetbundle";
+        const string kBundledAsset = "bundledasset";
+
+        var locations = new List<ResourceManagerImpl.ResourceLocation>();
+        foreach (var cmd in commandSet.commands)
+        {
+            var assetNames = AssetDatabase.GetAssetPathsFromAssetBundle(cmd.assetBundleName);
+            locations.Add(new ResourceManagerImpl.ResourceLocation(cmd.assetBundleName, Path.Combine(relativeStreamingAssetsBundlePath, cmd.assetBundleName), kLocalAssetBundle, cmd.assetBundleDependencies));
+
+            foreach (var info in cmd.explicitAssets)
+                locations.Add(new ResourceManagerImpl.ResourceLocation(info.address, info.address, kBundledAsset, new string[] { cmd.assetBundleName }));
+        }
+
+        var cc = ScriptableObject.CreateInstance<ContentCatalog>();
+        cc.locations = locations;
+        cc.locations.Sort();
+        
+        if (File.Exists("Assets/Resources/ContentCatalog.asset"))
+            File.Delete("Assets/Resources/ContentCatalog.asset");
+        AssetDatabase.CreateAsset(cc, "Assets/Resources/ContentCatalog.asset");
     }
 
 //    static ContentCatalog GenerateContentCatalog()
