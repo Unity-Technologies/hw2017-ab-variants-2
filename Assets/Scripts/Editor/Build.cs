@@ -67,6 +67,7 @@ public class MyBuildProcess
         settings.typeDB = results.typeDB;
         settings.outputFolder = outputPath;
 
+        SetupAssetVariantMapsAsset();
         var input = BuildInterface.GenerateBuildInput();
 
         if(input.definitions.Length == 0)
@@ -142,6 +143,20 @@ public class MyBuildProcess
         if (File.Exists("Assets/Resources/ContentCatalog.asset"))
             File.Delete("Assets/Resources/ContentCatalog.asset");
         AssetDatabase.CreateAsset(cc, "Assets/Resources/ContentCatalog.asset");
+    }
+
+    static void SetupAssetVariantMapsAsset()
+    {
+        const string assetVariantMapsPath = "Assets/AssetVariantMaps.asset";
+        if (File.Exists(assetVariantMapsPath))
+            AssetDatabase.DeleteAsset(assetVariantMapsPath);
+
+        var assetVariantMappingObj = ScriptableObject.CreateInstance<AssetVariantMappingObject>();
+        assetVariantMappingObj.assetVariantMaps = AssetVariantMapping.GetAssetVariantMaps();;
+        AssetDatabase.CreateAsset(assetVariantMappingObj, assetVariantMapsPath);
+
+        AssetImporter importer = AssetImporter.GetAtPath(assetVariantMapsPath);
+        importer.assetBundleName = "AssetVariantMapsBundle";
     }
 
 //    static ContentCatalog GenerateContentCatalog()
