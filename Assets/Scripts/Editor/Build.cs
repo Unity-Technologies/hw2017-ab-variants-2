@@ -62,25 +62,6 @@ public class MyBuildProcess
         settings.outputFolder = outputPath;
 
         var input = BuildInterface.GenerateBuildInput();
-//        BuildInput input;
-//        AddressableAssetSettings.GetDefault().GenerateBuildInput(out input);
-
-//        var scenes = EditorBuildSettings.scenes;
-//        var sceneInput = new BuildInput();
-//        sceneInput.definitions = new BuildInput.Definition[scenes.Length];
-//        for(var x = 0; x < sceneInput.definitions.Length; x++)
-//        {
-//            var def = new BuildInput.Definition();
-//            def.assetBundleName = scenes[x].path.Replace("/", "_");
-//            var addressableAsset = new BuildInput.AddressableAsset();
-//            addressableAsset.address = scenes[x].path;
-//            addressableAsset.asset = scenes[x].guid;
-//            def.explicitAssets = new BuildInput.AddressableAsset[] { addressableAsset };
-//            sceneInput.definitions[x] = def;
-//        }
-
-//        if(sceneInput.definitions.Length > 0)
-//            ArrayUtility.AddRange<BuildInput.Definition>(ref input.definitions, sceneInput.definitions);
 
         if(input.definitions.Length == 0)
         {
@@ -88,12 +69,16 @@ public class MyBuildProcess
             return;
         }
 
-        BuildOutput output;
-        if(AssetBundleBuildPipeline.BuildAssetBundles(settings, input, out output))
+        BuildCommandSet commands;
+        if(AssetBundleBuildPipeline.GenerateCommandSet(settings, input, out commands))
         {
-            var bundlesToCopy = new List<string>(output.results.Select(x => x.assetBundleName));
+            BuildOutput output;
+            if(AssetBundleBuildPipeline.ExecuteCommandSet(settings, commands, out output))
+            {
+                var bundlesToCopy = new List<string>(output.results.Select(x => x.assetBundleName));
 
-            CopyBundlesToStreamingAssets(bundlesToCopy);
+                CopyBundlesToStreamingAssets(bundlesToCopy);
+            }
         }
     }
     
@@ -120,6 +105,9 @@ public class MyBuildProcess
             var copyFromPath = Path.Combine(bundleBuildPath, bundleName);
             var copyToPath = Path.Combine(streamingAssetsBundlePath, bundleName);
             Debug.LogFormat("Copying asset bundle: {0} => {1}", copyFromPath, copyToPath);
+
+            var parentDir = Path.GetDirectoryName(copyToPath);
+            Directory.CreateDirectory(parentDir);
 
             File.Copy(copyFromPath, copyToPath);
         }
