@@ -11,4 +11,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cadef1c22057e46863b7746e5f4c7d, type: 3}
   m_Name: ContentCatalog
   m_EditorClassIdentifier: 
-  locations: []
+  locations:
+  - m_name: assets/adventure game/prefabs/marketcoffeesign.prefab
+    m_id: assets/adventure game/prefabs/marketcoffeesign.prefab
+    m_method: bundledasset
+    m_dependencies:
+    - market_coffee_sign
+  - m_name: assets/adventure game/prefabs/marketfishsignneon.prefab
+    m_id: assets/adventure game/prefabs/marketfishsignneon.prefab
+    m_method: bundledasset
+    m_dependencies:
+    - market_fish_sign
+  - m_name: assets/adventure game/prefabs/signs.prefab
+    m_id: assets/adventure game/prefabs/signs.prefab
+    m_method: bundledasset
+    m_dependencies:
+    - market_signs
+  - m_name: assets/assetvariantmaps.asset
+    m_id: assets/assetvariantmaps.asset
+    m_method: bundledasset
+    m_dependencies:
+    - assetvariantmapsbundle
+  - m_name: assetvariantmapsbundle
+    m_id: bundles/StandaloneOSXIntel64/assetvariantmapsbundle
+    m_method: localassetbundle
+    m_dependencies: []
+  - m_name: market_coffee_sign
+    m_id: bundles/StandaloneOSXIntel64/market_coffee_sign
+    m_method: localassetbundle
+    m_dependencies: []
+  - m_name: market_fish_sign
+    m_id: bundles/StandaloneOSXIntel64/market_fish_sign
+    m_method: localassetbundle
+    m_dependencies: []
+  - m_name: market_signs
+    m_id: bundles/StandaloneOSXIntel64/market_signs
+    m_method: localassetbundle
+    m_dependencies: []
