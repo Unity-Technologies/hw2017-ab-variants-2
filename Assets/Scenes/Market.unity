@@ -632,53 +632,6 @@ Transform:
   m_Father: {fileID: 757980612}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &77497301
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1901607198}
-    m_Modifications:
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 4.4439993
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.0679998
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -3.281
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: c2941c5c48fd04fc2a6b1caf51764f52, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &77497302 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4196381995176392, guid: c2941c5c48fd04fc2a6b1caf51764f52,
-    type: 2}
-  m_PrefabInternal: {fileID: 77497301}
 --- !u!1 &82073887
 GameObject:
   m_ObjectHideFlags: 0
@@ -15980,7 +15933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &935979997
 Transform:
   m_ObjectHideFlags: 0
@@ -26189,7 +26142,6 @@ Transform:
   - {fileID: 1208645027}
   - {fileID: 1622549675}
   - {fileID: 935979997}
-  - {fileID: 77497302}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26300,7 +26252,7 @@ MonoBehaviour:
     enabled: 1
   - address: assets/adventure game/prefabs/marketfishsignneon.prefab
     parent: {fileID: 1901607198}
-    enabled: 0
+    enabled: 1
   - address: assets/adventure game/prefabs/signs.prefab
     parent: {fileID: 1622549675}
     enabled: 1

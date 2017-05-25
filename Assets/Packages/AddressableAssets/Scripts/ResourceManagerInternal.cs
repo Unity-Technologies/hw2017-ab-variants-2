@@ -21,7 +21,7 @@ namespace UnityEngine.ResourceManagement
             ResourceManager.instance.AddResourceProvider(new CachedProvider("Asset Bundles", new AssetBundleProvider(new LocalAssetBundleProvider())));
             ResourceManager.instance.AddResourceProvider(new CachedProvider("Assets", new BundledAssetProvider()));
             ResourceManager.instance.AddResourceProvider(new LocalAssetProvider());
-            InitAssetVariants();
+            //InitAssetVariants();
         }
 
         public ResourceManagerImpl()

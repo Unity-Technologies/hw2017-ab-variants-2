@@ -1,0 +1,642 @@
+fileFormatVersion: 2
+guid: cf70e418ddc8b4fc18e71118257d7d73
+timeCreated: 1495725806
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ScrollingText_Danish_0
+    21300002: ScrollingText_Danish_1
+    21300004: ScrollingText_Danish_2
+    21300006: ScrollingText_Danish_3
+    21300008: ScrollingText_Danish_4
+    21300010: ScrollingText_Danish_5
+    21300012: ScrollingText_Danish_6
+    21300014: ScrollingText_Danish_7
+    21300016: ScrollingText_Danish_8
+    21300018: ScrollingText_Danish_9
+    21300020: ScrollingText_Danish_10
+    21300022: ScrollingText_Danish_11
+    21300024: ScrollingText_Danish_12
+    21300026: ScrollingText_Danish_13
+    21300028: ScrollingText_Danish_14
+    21300030: ScrollingText_Danish_15
+    21300032: ScrollingText_Danish_16
+    21300034: ScrollingText_Danish_17
+    21300036: ScrollingText_Danish_18
+    21300038: ScrollingText_Danish_19
+    21300040: ScrollingText_Danish_20
+    21300042: ScrollingText_Danish_21
+    21300044: ScrollingText_Danish_22
+    21300046: ScrollingText_Danish_23
+    21300048: ScrollingText_Danish_24
+    21300050: ScrollingText_Danish_25
+    21300052: ScrollingText_Danish_26
+    21300054: ScrollingText_Danish_27
+    21300056: ScrollingText_Danish_28
+    21300058: ScrollingText_Danish_29
+    21300060: ScrollingText_Danish_30
+    21300062: ScrollingText_Danish_31
+    21300064: ScrollingText_Danish_32
+    21300066: ScrollingText_Danish_33
+    21300068: ScrollingText_Danish_34
+    21300070: ScrollingText_Danish_35
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: -1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ScrollingText_Danish_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1878
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_1
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1878
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_2
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1878
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1708
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1708
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_5
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1708
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1538
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_7
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1538
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_8
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1538
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1368
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_10
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1368
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_11
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1368
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1198
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_13
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1198
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_14
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1198
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1028
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_16
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1028
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_17
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1028
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 858
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_19
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 858
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_20
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 858
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 688
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_22
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 688
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_23
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 688
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 518
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_25
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 518
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_26
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 518
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_28
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 348
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_29
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 348
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 178
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_31
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 178
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_32
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 178
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_34
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 8
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScrollingText_Danish_35
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 8
+        width: 682
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
