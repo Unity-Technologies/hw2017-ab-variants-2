@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Name: ContentCatalog
   m_EditorClassIdentifier: 
   locations:
+  - m_name: assets/adventure game/prefabs/holograms.prefab
+    m_id: assets/adventure game/prefabs/holograms.prefab
+    m_method: bundledasset
+    m_dependencies:
+    - security_holograms
   - m_name: assets/adventure game/prefabs/marketcoffeesign.prefab
     m_id: assets/adventure game/prefabs/marketcoffeesign.prefab
     m_method: bundledasset
@@ -46,5 +51,9 @@ MonoBehaviour:
     m_dependencies: []
   - m_name: market_signs
     m_id: bundles/StandaloneOSXIntel64/market_signs
+    m_method: localassetbundle
+    m_dependencies: []
+  - m_name: security_holograms
+    m_id: bundles/StandaloneOSXIntel64/security_holograms
     m_method: localassetbundle
     m_dependencies: []
