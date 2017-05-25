@@ -297,8 +297,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313547315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 460, y: 253, z: 0}
-  m_LocalScale: {x: 0.47916666, y: 0.47916666, z: 0.47916666}
+  m_LocalPosition: {x: 382.5, y: 253, z: 0}
+  m_LocalScale: {x: 0.3984375, y: 0.3984375, z: 0.3984375}
   m_Children:
   - {fileID: 1335123713}
   - {fileID: 1708470358}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faderCanvasGroup: {fileID: 1708470355}
   fadeDuration: 1
-  startingSceneName: SecurityRoom
+  startingSceneName: Scenes/SecurityRoom
   initialStartingPositionName: DoorToMarket
   playerSaveData: {fileID: 11400000, guid: 55d72825bf06cf44e9cbc1b37812cc6f, type: 2}
 --- !u!4 &353158847

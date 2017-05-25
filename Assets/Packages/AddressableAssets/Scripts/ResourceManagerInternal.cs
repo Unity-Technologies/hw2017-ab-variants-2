@@ -36,16 +36,8 @@ namespace UnityEngine.ResourceManagement
 
         static void InitAssetVariants()
         {
-            ResourceManager.instance.LoadAsync<AssetVariantMappingObject>("assets/assetvariantmaps.asset").complete += (obj) => {
-                if(obj.result)
-                {
-                    AssetVariantMapping.SetAssetVariantMaps(obj.result.assetVariantMaps);
-                }
-                else
-                {
-                    Debug.LogWarning("Could not load asset variant mapping bundle!");
-                }
-            };
+            var obj = ResourceManager.instance.Load<AssetVariantMappingObject>("assets/assetvariantmaps.asset");
+            AssetVariantMapping.SetAssetVariantMaps(obj.assetVariantMaps);
         }
 
         //this allows for custom locators to be injected into the system.  Usually used in conjunction
