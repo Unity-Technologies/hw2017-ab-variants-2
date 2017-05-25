@@ -3,6 +3,7 @@ using UnityEditor.Build.Utilities;
 using UnityEditor.Experimental.Build.AssetBundle;
 using UnityEngine;
 using UnityEditor;
+using System.Collections.Generic;
 
 namespace UnityEditor.Build.AssetBundle.DataConverters
 {
@@ -32,19 +33,28 @@ namespace UnityEditor.Build.AssetBundle.DataConverters
 
             if (input.IsNullOrEmpty())
             {
-                BuildLogger.LogError("Unable to continue packing. Input is null or empty!");
-                return false;
+                BuildLogger.Log("Unable to continue packing addressable assets. Input is null or empty.");
+                return true;
             }
 
-            output.definitions = new BuildInput.Definition[input.Length];
-            for (var index = 0; index < input.Length; index++)
+            var outputDefList = new List<BuildInput.Definition>();
+
+            foreach(var entry in input)
             {
-                var entry = input[index];
+                if(!entry.active)
+                    continue;
+
                 var assetPath = AssetDatabase.GUIDToAssetPath(entry.guid.ToString());
                 var address = string.IsNullOrEmpty(entry.address) ? assetPath : entry.address;
-                output.definitions[index].assetBundleName = address.Replace("/", "_");
-                output.definitions[index].explicitAssets = new[] { new BuildInput.AddressableAsset() { asset = entry.guid, address = address } };
+
+                var def = new BuildInput.Definition();
+                def.assetBundleName = System.IO.Path.GetFileNameWithoutExtension(address) + "_" + entry.guid.ToString();
+                def.explicitAssets = new[] { new BuildInput.AddressableAsset() { asset = entry.guid, address = address } };
+
+                outputDefList.Add(def);
             }
+
+            output.definitions = outputDefList.ToArray();
             
             // Cache results
             if (useCache)

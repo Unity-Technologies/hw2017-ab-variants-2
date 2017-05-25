@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using UnityEditor.Build.Utilities;
 using UnityEditor.Build.AssetBundle;
 using UnityEditor.Experimental.Build.AssetBundle;
 using UnityEditor.Experimental.Build.Player;
@@ -71,6 +72,11 @@ public class MyBuildProcess
 
         SetupAssetVariantMapsAsset();
         var input = BuildInterface.GenerateBuildInput();
+
+        BuildInput addressableInput;
+        AddressableAssetSettings.GetDefault().GenerateBuildInput(out addressableInput);
+
+        input = addressableInput.Merge(input);
 
         BuildCommandSet commands;
         if(AssetBundleBuildPipeline.GenerateCommandSet(settings, input, out commands))

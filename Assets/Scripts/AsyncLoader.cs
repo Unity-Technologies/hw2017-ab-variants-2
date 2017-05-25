@@ -14,6 +14,7 @@ public class AsyncLoader : MonoBehaviour {
 
     public LoadInfo[] loadList;
 
+
 	void Start ()
     {
 		foreach(var item in loadList)
