@@ -4,16 +4,16 @@
 VirtualAssetManager:
   m_ObjectHideFlags: 0
   serializedVersion: 1
-  m_activeTag: 
+  m_activeTag: dk
   m_AssetVariantMaps:
-    data:
-      first: {fileID: 2100000, guid: 71e4cc976fb954d489e47c27ba9c6950, type: 2}
-      second:
-        danish: {fileID: 2100000, guid: acc4210a106144b8e90d9a5261b4c457, type: 2}
     data:
       first: {fileID: 2800000, guid: 1f7e69f695c34aa4eb96e9309660d3bb, type: 3}
       second:
         dk: {fileID: 2800000, guid: 96d233535be9146d09c6c4df1e18fb5a, type: 3}
+    data:
+      first: {fileID: 2800000, guid: 6446c889f3ca93e49808b98b30f164ec, type: 3}
+      second:
+        dk: {fileID: 2800000, guid: fe4ad9dc42c3440fa8d7eec05cb8dbbb, type: 3}
     data:
       first: {fileID: 2800000, guid: ee1701bd3676de14c86a6f7cedc08177, type: 3}
       second:

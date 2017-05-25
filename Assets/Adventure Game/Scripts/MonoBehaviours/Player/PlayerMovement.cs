@@ -58,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         destinationPosition = transform.position;
     }
 
-
     private void OnAnimatorMove()
     {
         // Set the velocity of the nav mesh agent (which is moving the player) based on the speed that the animator would move the player.

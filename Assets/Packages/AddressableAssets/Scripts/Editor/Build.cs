@@ -76,7 +76,7 @@ public class MyBuildProcess
         BuildInput addressableInput;
         AddressableAssetSettings.GetDefault().GenerateBuildInput(out addressableInput);
 
-        input = addressableInput.Merge(input);
+        //input = addressableInput.Merge(input);
 
         BuildCommandSet commands;
         if(AssetBundleBuildPipeline.GenerateCommandSet(settings, input, out commands))

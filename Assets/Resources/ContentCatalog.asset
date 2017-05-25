@@ -16,22 +16,52 @@ MonoBehaviour:
     m_id: assets/adventure game/prefabs/holograms.prefab
     m_method: bundledasset
     m_dependencies:
-    - Holograms_ff24d95797aa84f84a87423e644bd03c
+    - holograms
   - m_name: assets/adventure game/prefabs/marketcoffeesign.prefab
     m_id: assets/adventure game/prefabs/marketcoffeesign.prefab
     m_method: bundledasset
     m_dependencies:
-    - MarketCoffeeSign_0fde29488911f46b6b2bf10550edc1c4
+    - market_coffee_sign
   - m_name: assets/adventure game/prefabs/marketfishsignneon.prefab
     m_id: assets/adventure game/prefabs/marketfishsignneon.prefab
     m_method: bundledasset
     m_dependencies:
-    - MarketFishSignNeon_c2941c5c48fd04fc2a6b1caf51764f52
+    - market_fishsign_neon
   - m_name: assets/adventure game/prefabs/signs.prefab
     m_id: assets/adventure game/prefabs/signs.prefab
     m_method: bundledasset
     m_dependencies:
-    - Signs_d011dc496f6aa466b9ee6e63922ce464
+    - market_signs
+  - m_name: assets/adventure game/textures/environment/market/marketcoffeesignalbedo.png
+    m_id: assets/adventure game/textures/environment/market/marketcoffeesignalbedo.png
+    m_method: bundledasset
+    m_dependencies:
+    - shared_assets
+  - m_name: assets/adventure game/textures/environment/market/marketcoffeesignalbedo_danish.png
+    m_id: assets/adventure game/textures/environment/market/marketcoffeesignalbedo_danish.png
+    m_method: bundledasset
+    m_dependencies:
+    - shared_assets
+  - m_name: assets/adventure game/textures/environment/market/marketfishsignneon.png
+    m_id: assets/adventure game/textures/environment/market/marketfishsignneon.png
+    m_method: bundledasset
+    m_dependencies:
+    - shared_assets
+  - m_name: assets/adventure game/textures/environment/market/marketfishsignneon_danish.png
+    m_id: assets/adventure game/textures/environment/market/marketfishsignneon_danish.png
+    m_method: bundledasset
+    m_dependencies:
+    - shared_assets
+  - m_name: assets/adventure game/textures/environment/market/marketsignsalbedo.tif
+    m_id: assets/adventure game/textures/environment/market/marketsignsalbedo.tif
+    m_method: bundledasset
+    m_dependencies:
+    - shared_assets
+  - m_name: assets/adventure game/textures/environment/market/marketsignsalbedo_danish.tif
+    m_id: assets/adventure game/textures/environment/market/marketsignsalbedo_danish.tif
+    m_method: bundledasset
+    m_dependencies:
+    - shared_assets
   - m_name: assets/assetvariantmaps.asset
     m_id: assets/assetvariantmaps.asset
     m_method: bundledasset
@@ -40,20 +70,28 @@ MonoBehaviour:
   - m_name: assetvariantmapsbundle
     m_id: bundles/StandaloneOSXIntel64/assetvariantmapsbundle
     m_method: localassetbundle
-    m_dependencies: []
-  - m_name: Holograms_ff24d95797aa84f84a87423e644bd03c
-    m_id: bundles/StandaloneOSXIntel64/Holograms_ff24d95797aa84f84a87423e644bd03c
+    m_dependencies:
+    - shared_assets
+  - m_name: holograms
+    m_id: bundles/StandaloneOSXIntel64/holograms
     m_method: localassetbundle
     m_dependencies: []
-  - m_name: MarketCoffeeSign_0fde29488911f46b6b2bf10550edc1c4
-    m_id: bundles/StandaloneOSXIntel64/MarketCoffeeSign_0fde29488911f46b6b2bf10550edc1c4
+  - m_name: market_coffee_sign
+    m_id: bundles/StandaloneOSXIntel64/market_coffee_sign
     m_method: localassetbundle
-    m_dependencies: []
-  - m_name: MarketFishSignNeon_c2941c5c48fd04fc2a6b1caf51764f52
-    m_id: bundles/StandaloneOSXIntel64/MarketFishSignNeon_c2941c5c48fd04fc2a6b1caf51764f52
+    m_dependencies:
+    - shared_assets
+  - m_name: market_fishsign_neon
+    m_id: bundles/StandaloneOSXIntel64/market_fishsign_neon
     m_method: localassetbundle
-    m_dependencies: []
-  - m_name: Signs_d011dc496f6aa466b9ee6e63922ce464
-    m_id: bundles/StandaloneOSXIntel64/Signs_d011dc496f6aa466b9ee6e63922ce464
+    m_dependencies:
+    - shared_assets
+  - m_name: market_signs
+    m_id: bundles/StandaloneOSXIntel64/market_signs
+    m_method: localassetbundle
+    m_dependencies:
+    - shared_assets
+  - m_name: shared_assets
+    m_id: bundles/StandaloneOSXIntel64/shared_assets
     m_method: localassetbundle
     m_dependencies: []
