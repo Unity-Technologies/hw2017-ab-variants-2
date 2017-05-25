@@ -81,6 +81,20 @@ public class ExtractKeysWindows : EditorWindow
 				if(!string.IsNullOrEmpty(tm.text))
 					keys.Add(tm.text);
 			}
+
+			// Reaction Collection - specific to this project. We should do relfection here for user scripts.
+
+
+			var reactions = Object.FindObjectsOfType<ReactionCollection> ();
+			foreach (var r in reactions) 
+			{
+				foreach (var currentReaction in r.reactions) 
+				{
+					TextReaction tr = currentReaction as TextReaction;
+					if (tr)
+						keys.Add (tr.message);
+				}
+			}
 		}
 
 		EditorUtility.ClearProgressBar ();

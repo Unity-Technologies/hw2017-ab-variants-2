@@ -16,9 +16,61 @@ MonoBehaviour:
   - "Pillars of VR Design\n  1) Adapt for Perspective\n  2) Manage Camera Movement\n
     \ 2) Handle User Input\n  3) Configure the UI"
   - Get lost!
+  - Fresh coffee!  Only one coin!
+  - Here's your coffee!
+  - I doubt this is a clue...
+  - The bird has flown away!
+  - I don't want another fish.
+  - Oh!  A coin!
+  - No more coins...
+  - The bird knocked those glasses down.
+  - He looks pretty trustworthy.
+  - YOU WIN!
+  - ACCESS DENIED!
+  - Hey Frank!  Go on through!
+  - Hey Frank, you shouldn't go through without the boss's coffee.
   m_database:
   - language: 0
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -40,9 +92,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 2
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -64,9 +194,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 4
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -88,9 +296,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 6
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -112,9 +398,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 8
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -136,6 +500,45 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 10
     values:
@@ -148,9 +551,87 @@ MonoBehaviour:
     - m_value: Get Out(English)
       m_Comments: []
       m_pluralValues: []
+    - m_value: Fresh coffee!  Only one coin!
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 11
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -172,9 +653,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 13
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -196,9 +755,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 15
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: Get lost(German)
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: Fresh coffee!  Only one coin! - German
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -220,9 +857,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 17
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -244,9 +959,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 19
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -268,6 +1061,45 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 21
     values:
@@ -280,9 +1112,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 22
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: Get lost(Japanese)
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: Fresh coffee!  Only one coin! - Japanese
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -304,9 +1214,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 24
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -328,9 +1316,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 26
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -352,9 +1418,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 28
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -376,9 +1520,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 30
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -400,9 +1622,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 32
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -424,9 +1724,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 34
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -448,9 +1826,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 36
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -472,9 +1928,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 38
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
@@ -496,6 +2030,45 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 40
     values:
@@ -508,9 +2081,87 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     isEditing: 0
   - language: 41
     values:
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
+    - m_value: 
+      m_Comments: []
+      m_pluralValues: []
     - m_value: 
       m_Comments: []
       m_pluralValues: []
