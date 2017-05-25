@@ -23,3 +23,8 @@ VirtualAssetManager:
       first: {fileID: 2800000, guid: aadd163a1083b694cb476d64aa66c8a2, type: 3}
       second:
         dk: {fileID: 2800000, guid: cf70e418ddc8b4fc18e71118257d7d73, type: 3}
+    data:
+      first: {fileID: 8300000, guid: 460cbf252686b5f40b1ec18039f70b59, type: 3}
+      second:
+        dk: {fileID: 8300000, guid: 86e5890520e1042e6a9564f19d204dbf, type: 3}
+        fr: {fileID: 8300000, guid: 655a0a8de665e4ac2ae86697551bac06, type: 3}
