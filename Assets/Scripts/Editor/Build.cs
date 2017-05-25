@@ -23,6 +23,8 @@ public class MyBuildProcess
         BuildAssetBundles();
     }
 
+    const string kContentCatalogPath = "Assets/Resources/ContentCatalog.asset";
+
     public static string bundleBuildPath
     {
         get
@@ -70,12 +72,6 @@ public class MyBuildProcess
         SetupAssetVariantMapsAsset();
         var input = BuildInterface.GenerateBuildInput();
 
-        if(input.definitions.Length == 0)
-        {
-            Debug.Log("No asset bundles to build.");
-            return;
-        }
-
         BuildCommandSet commands;
         if(AssetBundleBuildPipeline.GenerateCommandSet(settings, input, out commands))
         {
@@ -106,6 +102,9 @@ public class MyBuildProcess
         if(Directory.Exists(streamingAssetsBundlePath))
             Directory.Delete(streamingAssetsBundlePath, true);
 
+        if(bundlesToCopy.Count == 0)
+            return;
+
         Directory.CreateDirectory(streamingAssetsBundlePath);
 
         foreach(var bundleName in bundlesToCopy)
@@ -129,25 +128,18 @@ public class MyBuildProcess
         var locations = new List<ResourceManagerImpl.ResourceLocation>();
         foreach (var cmd in commandSet.commands)
         {
+            locations.Add(new ResourceManagerImpl.ResourceLocation(cmd.assetBundleName, Path.Combine(relativeStreamingAssetsBundlePath, cmd.assetBundleName), kLocalAssetBundle, cmd.assetBundleDependencies));
+
             if(!string.IsNullOrEmpty(cmd.scene))
             {
-                // Must add the scene bundle as a dependency on the scene asset
-                var deps = new List<string>(cmd.assetBundleDependencies);
-                deps.Add(cmd.assetBundleName);
-
-                for(int x = 0; x < deps.Count; x++)
-                    deps[x] = Path.Combine(relativeStreamingAssetsBundlePath, deps[x]);
-
                 var id = Path.GetFileNameWithoutExtension(cmd.scene);
                 var name = string.Concat("Scene::", id);
 
-                locations.Add(new ResourceManagerImpl.ResourceLocation(name, id, kLocalAssetBundle, deps.ToArray()));
+                locations.Add(new ResourceManagerImpl.ResourceLocation(name, id, kLocalAssetBundle, new string[]{ cmd.assetBundleName }));
 
             }
             else if(cmd.explicitAssets.Length > 0)
             {
-                locations.Add(new ResourceManagerImpl.ResourceLocation(cmd.assetBundleName, Path.Combine(relativeStreamingAssetsBundlePath, cmd.assetBundleName), kLocalAssetBundle, cmd.assetBundleDependencies));
-
                 foreach (var info in cmd.explicitAssets)
                     locations.Add(new ResourceManagerImpl.ResourceLocation(info.address, info.address, kBundledAsset, new string[] { cmd.assetBundleName }));
 
@@ -159,12 +151,12 @@ public class MyBuildProcess
         cc.locations = locations;
         cc.locations.Sort();
         
-        if (File.Exists("Assets/Resources/ContentCatalog.asset"))
-            File.Delete("Assets/Resources/ContentCatalog.asset");
+        if (File.Exists(kContentCatalogPath))
+            File.Delete(kContentCatalogPath);
 
-        Directory.CreateDirectory("Assets/Resources");
+        Directory.CreateDirectory(Path.GetDirectoryName(kContentCatalogPath));
 
-        AssetDatabase.CreateAsset(cc, "Assets/Resources/ContentCatalog.asset");
+        AssetDatabase.CreateAsset(cc, kContentCatalogPath);
     }
 
     static void SetupAssetVariantMapsAsset()

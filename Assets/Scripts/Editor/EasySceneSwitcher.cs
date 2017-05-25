@@ -29,7 +29,7 @@ public static class EasySceneSwitcher
 
 	static EasySceneSwitcher()
 	{
-		EditorApplication.playmodeStateChanged += OnPlayModeChanged;
+		EditorApplication.playModeStateChanged += OnPlayModeChanged;
 
 		isEnabled = EditorPrefs.GetBool (ONNAME, false);
 
@@ -112,7 +112,7 @@ public static class EasySceneSwitcher
 	}
 
 	// Play mode change callback handles the scene load/reload.
-	static void OnPlayModeChanged()
+	static void OnPlayModeChanged(PlayModeStateChange obj)
 	{
 		if (!isEnabled)
 			return;
