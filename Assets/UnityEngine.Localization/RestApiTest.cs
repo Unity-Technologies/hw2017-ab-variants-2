@@ -95,30 +95,35 @@ namespace UnityEngine.Localization
         public static void GetTranslationFile()
         {
             var filePathOnServer = "Best Practices/1-1.physics_best_practices.pot"; // TODO: Get this from API.
-            var translationFile = DownloadTranslationFile(filePathOnServer);
-            SaveTranslationFileToProjectLanguageFile(translationFile);
+            var translationFile = DownloadTranslationFile(filePathOnServer, SystemLanguage.Japanese, new TranslateProject());
+            SaveTranslationFileToProjectLanguageFile(translationFile, new TranslateProject());
         }
 
         // Works.
         [MenuItem ("Tests/Rest/Upload Translation File")]
-        public static void UploadTranslationFile()
+        static void UploadTranslationFile()
         {
-            var localFilePath = "Best Practices/2-1.a_guide_to_assetbundles_and_resources.asset"; // TODO: Get this from API.
-            if (!IsSourceFileOnServerAndIsNotModified(localFilePath))
-                UploadSourceFile(localFilePath);
-            UploadTranslationFile(localFilePath, SystemLanguage.Japanese); // TODO: Get SystemLanguage for current exporting language 
+            var localFilePath = "Best Practices/1-1.physics_best_practices.asset"; // TODO: Get this from API.
+            if (!IsSourceFileOnServerAndIsNotModified(localFilePath, new TranslateProject()))
+                UploadSourceFile(localFilePath, new TranslateProject());
+            UploadTranslationFile(localFilePath, SystemLanguage.Japanese, new TranslateProject()); // TODO: Get SystemLanguage for current exporting language 
         }
+
+        // public static void UploadTranslationFile(string localFilePath, SystemLanguage translationLanguage)
+        // {
+
+        // }
 
         //Should check if the file is there or if it is of the same version/condition. 
         // https://new-translate-api-staging.unity3d.jp/v1/files/source-file/actions/verify?projectID=1&branch=topics&file=Best%20Practices%2F1-1.physics_best_practices.md&md5=dd9391cd42e5bf63888208e2b835172c
-        static bool IsSourceFileOnServerAndIsNotModified(string localFilePath)
+        static bool IsSourceFileOnServerAndIsNotModified(string localFilePath, TranslateProject projectSettings)
         {
             string serverFilePath = GetServerPathForLocalPath(localFilePath);
             var absoluteFilePath = GetAbsoluteFilePath(localFilePath);
             var md5 = GetMD5HashForFileContent(absoluteFilePath); // TODO: Fix it. Hash for converted POT file and not for the LANG file.
             var requestURL = serverUrl + "/v1/files/source-file/actions/verify?"
-                                + "projectID=" + TranslateProject.GetProjectDataForEditor().id
-                                + "&branch=" + TranslateProject.GetProjectDataForEditor().currentBranch
+                                + "projectID=" + projectSettings.id
+                                + "&branch=" + projectSettings.currentBranch
                                 + "&file=" + serverFilePath
                                 + "&md5=" + md5;
             Downloader.Response response;
@@ -151,18 +156,18 @@ namespace UnityEngine.Localization
         }
 
         // https://new-translate-web-staging.unity3d.jp/api/file-api/upload-translation-file
-        private static void UploadTranslationFile(string localFilePath, SystemLanguage targetLanguage)
+        public static void UploadTranslationFile(string localFilePath, SystemLanguage targetLanguage, TranslateProject projectSettings)
         {
             var uploadFile = new Dictionary<string, object>();
             var translationFilePath = Path.ChangeExtension(localFilePath, ".po");
             uploadFile["name"] = translationFilePath;
             uploadFile["mimeType"] = "application/x-po";
-            var fileContent = GetFileDataInPoFormat(localFilePath, targetLanguage);
+            var fileContent = GetFileDataInPoFormat(localFilePath, targetLanguage, projectSettings);
             uploadFile["text"] = fileContent;
 
             var data = new Dictionary<string, object>();
-            data["projectID"] = TranslateProject.GetProjectDataForEditor().id;
-            data["branch"] = TranslateProject.GetProjectDataForEditor().currentBranch;
+            data["projectID"] = projectSettings.id;
+            data["branch"] = projectSettings.currentBranch;
             data["languageID"] = serverLanguageCodes[targetLanguage.ToString()]; // Can't use SystemLanguage here. Need conversion between SystemLanguage and the one that is supported on the server.
             var sourceFilePath = GetServerPathForLocalPath(localFilePath); 
             data["filename"] = sourceFilePath;
@@ -178,7 +183,7 @@ namespace UnityEngine.Localization
         // Works. https://new-translate-web-staging.unity3d.jp/api/file-api/upload-source-file
         // TODO: Need a way to extract source file in PO format without translations.
         // TODO: References (Starts With "#:") in LANG file need be 'per-key' and not 'per-language'
-        private static void UploadSourceFile(string localFilePath)
+        private static void UploadSourceFile(string localFilePath, TranslateProject projectSettings)
         {
             var fileEntry = new Dictionary<string, object>();
             var remoteFilePath = GetServerPathForLocalPath(localFilePath);
@@ -186,7 +191,7 @@ namespace UnityEngine.Localization
             fileEntry["mimeType"] = "application/x-po";
 
             var fileContent = GetFileDataInPoFormat(localFilePath,
-                                SystemLanguage.Japanese); 
+                                SystemLanguage.Japanese, projectSettings); // TODO: FixIt ^^^
             fileEntry["text"] = fileContent;
 
             var filesToUpload = new List<object>();
@@ -198,8 +203,8 @@ namespace UnityEngine.Localization
             var jsonData = Json.Serialize(data);
             Downloader.Response response;
             Downloader.SendGetPostData(serverUrl
-                            + "/v1/projects/" + TranslateProject.GetProjectDataForEditor().id
-                            + "/" + TranslateProject.GetProjectDataForEditor().currentBranch
+                            + "/v1/projects/" + projectSettings.id
+                            + "/" + projectSettings.currentBranch
                             + "/files"
                             , jsonData
                             , out response);
@@ -207,16 +212,12 @@ namespace UnityEngine.Localization
         }
 
         // Appears to work OK
-        private static string GetFileDataInPoFormat(string localFilePath, SystemLanguage targetLanguage)
+        private static string GetFileDataInPoFormat(string localFilePath, SystemLanguage targetLanguage, TranslateProject projectSettings)
         {
             var db = GetMultiLangStringDB(localFilePath);
-            if (db == null)
-            {
-                throw new Exception("didn't load asset");
-            }
             var tempPath = Path.GetTempFileName();
             POUtility.ExportFile(db, targetLanguage,
-                        (SystemLanguage)TranslateProject.GetProjectDataForEditor().sourceLanguageID, tempPath);
+                        (SystemLanguage)projectSettings.sourceLanguageID, tempPath);
 
             var convertedContent = File.ReadAllText(tempPath);
             File.Delete(tempPath);
@@ -231,20 +232,21 @@ namespace UnityEngine.Localization
         // There's an option here (https://new-translate-web-staging.unity3d.jp/api/file-api/get-translated-file)
         // to download all files in one batch, but it was failing at the moment of implementation.
         [MenuItem ("Tests/Rest/Get All Translation Files")]
-        static void GetAllTranslationFiles()
+        public static void GetAllTranslationFiles()
         {
             if (listOfAllTransaltionFilesOnServer == null || listOfAllTransaltionFilesOnServer.Count == 0)
                 GetListOfFiles();
 
             foreach (var translationFilePath in listOfAllTransaltionFilesOnServer)
             {
-                var translationFile = DownloadTranslationFile(translationFilePath);
-                SaveTranslationFileToProjectLanguageFile(translationFile);
+                var translationFile = DownloadTranslationFile(translationFilePath,
+                                             SystemLanguage.Japanese, new TranslateProject());
+                SaveTranslationFileToProjectLanguageFile(translationFile, new TranslateProject());
             }
         }
 
         // Works. Takes file name as it is on server. Downloads it. Returns as TranslationFile.
-        static TranslationFile DownloadTranslationFile(string filePathOnServer)
+        public static TranslationFile DownloadTranslationFile(string filePathOnServer, SystemLanguage translationLanguage, TranslateProject projectSettings)
         {
             var translationFile = new TranslationFile();
 
@@ -253,9 +255,9 @@ namespace UnityEngine.Localization
 
             Downloader.Response response;
             Downloader.SendGetData(serverUrl // TODO: Get values here from API.
-                        + "/v1/files/translation-file?projectID=" + TranslateProject.GetProjectDataForEditor().id
-                        + "&languageID=" + serverLanguageCodes[SystemLanguage.Japanese.ToString()]
-                        + "&branch=" + TranslateProject.GetProjectDataForEditor().currentBranch 
+                        + "/v1/files/translation-file?projectID=" + projectSettings.id
+                        + "&languageID=" + serverLanguageCodes[translationLanguage.ToString()]
+                        + "&branch=" + projectSettings.currentBranch 
                         + "&file=" + filePathOnServer,
                         out response);
             translationFile.content = response.body;
@@ -266,13 +268,13 @@ namespace UnityEngine.Localization
         // Works.
         // Gets TranslationFile. Converts it to 'Language' file format. Saves it in Assets project
         // folder in the same relative path as was on the server.
-        private static void SaveTranslationFileToProjectLanguageFile(TranslationFile translationFile)
+        private static void SaveTranslationFileToProjectLanguageFile(TranslationFile translationFile, TranslateProject projectSettings)
         {
             var tempPath = Path.GetTempFileName();
             File.WriteAllText(tempPath, translationFile.content);
 
             var db = GetMultiLangStringDB(translationFile.pathOnServer);
-            POUtility.ImportFile(db, tempPath, SystemLanguage.English, true); // TODO: 1. Update reference language from settings. 2. Q.: When last param true and when false?
+            POUtility.ImportFile(db, tempPath, (SystemLanguage)projectSettings.sourceLanguageID, true); // TODO: 1. Update reference language from settings. 2. Q.: When last param true and when false?
             File.Delete(tempPath);
             
             SaveLangDBFileAtPath(db, translationFile.pathOnServer);
@@ -435,8 +437,15 @@ namespace UnityEngine.Localization
     // TODO: Might want to clean up the structure or get rid of it altogether, 
     // replacing JsonUtility implementation with Json.
     [System.Serializable]
-    class TranslateProject
+    public class TranslateProject
     {
+        public TranslateProject(int id = 23, string currentBranch = "master", SystemLanguage projectLanguage = SystemLanguage.English)
+        {
+            this.id = id;
+            this.currentBranch = currentBranch;
+            this.sourceLanguageID = (int)projectLanguage;
+        }
+        
         public bool deleted = false;
         public int id = -1;
         public string name = null;
@@ -452,9 +461,6 @@ namespace UnityEngine.Localization
         public static TranslateProject GetProjectDataForEditor()
         {
             var project = new TranslateProject();
-            project.id = 23;
-            project.currentBranch = "master";
-            project.sourceLanguageID = (int)SystemLanguage.English;
             return project;
         }
     }
@@ -465,7 +471,7 @@ namespace UnityEngine.Localization
         public TranslateProject[] projects = null;
     }
 
-    struct TranslationFile
+    public struct TranslationFile
     {
         public string pathOnServer;
         public string content;
