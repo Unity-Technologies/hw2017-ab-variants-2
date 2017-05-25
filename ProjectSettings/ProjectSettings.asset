@@ -789,3 +789,5 @@ PlayerSettings:
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
+  gameLanguage: 10
+  supportingLanguages: 0a0000000f00000016000000
