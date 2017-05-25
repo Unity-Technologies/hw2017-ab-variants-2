@@ -16,6 +16,33 @@ namespace UnityEngine.Localization
         private static string serverUrl = "https://new-translate-api-staging.unity3d.jp";
         static List<string> listOfAllTransaltionFilesOnServer;
 
+        // TODO: Need a way to do the mapping dynamically. 
+        static Dictionary<string, string> serverLanguageCodes = new Dictionary<string, string>
+        { // Add here whatever languages are supported on the server.
+            {"Arabic", "ar"},
+            {"Czech", "cs"},
+            {"Danish", "da"},
+            {"German", "de"},
+            {"Greek", "el"},
+            {"English", "en"},
+            {"Spanish", "es"},
+            {"Finnish", "fi"},
+            {"French", "fr"},
+            {"Hebrew", "he"},
+            {"Hungarian", "hu"},
+            {"Italian", "it"},
+            {"Japanese", "ja"},
+            {"Korean", "ko"},
+            {"Polish", "pl"},
+            {"Portuguese", "pt"},
+            {"Dutch", "nl"},
+            {"Slovak", "sk"},
+            {"Slovenian", "sl"},
+            {"Swedish", "sv"},
+            {"Turkish", "tr"},
+            {"Russian", "ru"}
+        };
+
         // Works. https://new-translate-web-staging.unity3d.jp/api/user-api/get-user-info
         [MenuItem ("Tests/Rest/User Info")]
         public static void GetUserInfo()
@@ -64,55 +91,51 @@ namespace UnityEngine.Localization
 
         // Works. For single file: https://new-translate-web-staging.unity3d.jp/api/file-api/get-translation-file
         // Downloading the file and converting it to Language-file format.
-        [MenuItem ("Tests/Rest/Get Translation File")] //WORKS
+        [MenuItem ("Tests/Rest/Get Translation File")]
         public static void GetTranslationFile()
         {
-            var filePathOnServer = "Best Practices/1-1.physics_best_practices.md";
+            var filePathOnServer = "Best Practices/1-1.physics_best_practices.pot"; // TODO: Get this from API.
             var translationFile = DownloadTranslationFile(filePathOnServer);
             SaveTranslationFileToProjectLanguageFile(translationFile);
         }
 
-        // Doesn't work. Need to upload source file first in PO format and then
-        // upload actual translation file, as well in PO format. 
-        // Currenty getting errors from the server while trying to upload source file.
+        // Works.
         [MenuItem ("Tests/Rest/Upload Translation File")]
         public static void UploadTranslationFile()
         {
-            var localFilePath = "Best Practices/2-1.a_guide_to_assetbundles_and_resources.asset";
+            var localFilePath = "Best Practices/2-1.a_guide_to_assetbundles_and_resources.asset"; // TODO: Get this from API.
             if (!IsSourceFileOnServerAndIsNotModified(localFilePath))
                 UploadSourceFile(localFilePath);
             UploadTranslationFile(localFilePath, SystemLanguage.Japanese); // TODO: Get SystemLanguage for current exporting language 
         }
 
         //Should check if the file is there or if it is of the same version/condition. 
+        // https://new-translate-api-staging.unity3d.jp/v1/files/source-file/actions/verify?projectID=1&branch=topics&file=Best%20Practices%2F1-1.physics_best_practices.md&md5=dd9391cd42e5bf63888208e2b835172c
         static bool IsSourceFileOnServerAndIsNotModified(string localFilePath)
         {
             string serverFilePath = GetServerPathForLocalPath(localFilePath);
-
             var absoluteFilePath = Path.Combine(Application.dataPath, localFilePath);
-            
-            var md5 = GetMD5HashForFile(absoluteFilePath); // TODO: Fix it. I need hash for converted POT file and not for the LANG file.
-
-            var requestURL = serverUrl + "/v1/files/source-file/actions/verify?projectID="
-                             + TranslateProject.GetProjectDataForEditor().id
-                             + "&branch=" + TranslateProject.GetProjectDataForEditor().currentBranch
-                             + "&file=" + serverFilePath + "&md5=" + md5;
-            Debug.Log("IsSourceFileOnServerAndIsNotModified\n" + requestURL);
+            var md5 = GetMD5HashForFileContent(absoluteFilePath); // TODO: Fix it. Hash for converted POT file and not for the LANG file.
+            var requestURL = serverUrl + "/v1/files/source-file/actions/verify?"
+                                + "projectID=" + TranslateProject.GetProjectDataForEditor().id
+                                + "&branch=" + TranslateProject.GetProjectDataForEditor().currentBranch
+                                + "&file=" + serverFilePath
+                                + "&md5=" + md5;
             Downloader.Response response;
             var success = Downloader.SendGetData(requestURL, out response);
-            Debug.Log("IsSourceFileOnServerAndIsNotModified:\n" + response);
+            // Debug.Log("IsSourceFileOnServerAndIsNotModified:\n" + response);
             if (success && response.body.Contains("true"))
                 return true;
             return false;
         }
 
+        // Source file name on server. Using 'pot' extension.
         static string GetServerPathForLocalPath(string localFilePath)
         {
-            // https://new-translate-api-staging.unity3d.jp/v1/files/source-file/actions/verify?projectID=1&branch=topics&file=Best%20Practices%2F1-1.physics_best_practices.md&md5=dd9391cd42e5bf63888208e2b835172c
             return Path.ChangeExtension(localFilePath, ".pot");
         }
 
-        static string GetMD5HashForFile(string absoluteFilePath)
+        static string GetMD5HashForFileContent(string absoluteFilePath)
         {
             using (var md5 = MD5.Create())
             {
@@ -140,20 +163,19 @@ namespace UnityEngine.Localization
             var data = new Dictionary<string, object>();
             data["projectID"] = TranslateProject.GetProjectDataForEditor().id;
             data["branch"] = TranslateProject.GetProjectDataForEditor().currentBranch;
-            data["languageID"] = "ja";//targetLanguage.ToString(); // TODO: can't use SystemLanguage here. Need either "13" or "ja" for Japanese. Need conversion between SystemLanguage and the one that is supported on the server.
-            var sourceFilePath = GetServerPathForLocalPath(localFilePath); // Source file name on server. Saving it with 'pot' extension.
+            data["languageID"] = serverLanguageCodes[targetLanguage.ToString()]; // Can't use SystemLanguage here. Need conversion between SystemLanguage and the one that is supported on the server.
+            var sourceFilePath = GetServerPathForLocalPath(localFilePath); 
             data["filename"] = sourceFilePath;
             data["uploadFile"] = uploadFile;
 
             var jsonData = Json.Serialize(data);
-            Debug.Log("UploadTranslationFile jsonData:\n" + jsonData);
             Downloader.Response response;
             Downloader.SendGetPostData(serverUrl + "/v1/files/translation-file"
                                         , jsonData, out response);
-            Debug.Log("UploadTranslationFile:\n" + response);
+            // Debug.Log("UploadTranslationFile:\n" + response);
         }
 
-        // FAILS. https://new-translate-web-staging.unity3d.jp/api/file-api/upload-source-file
+        // Works. https://new-translate-web-staging.unity3d.jp/api/file-api/upload-source-file
         // TODO: Need a way to extract source file in PO format without translations.
         // TODO: References (Starts With "#:") in LANG file need be 'per-key' and not 'per-language'
         private static void UploadSourceFile(string localFilePath)
@@ -164,7 +186,7 @@ namespace UnityEngine.Localization
             fileEntry["mimeType"] = "application/x-po";
 
             var fileContent = GetFileDataInPoFormat(localFilePath,
-                                SystemLanguage.Japanese);
+                                SystemLanguage.Japanese); 
             fileEntry["text"] = fileContent;
 
             var filesToUpload = new List<object>();
@@ -174,8 +196,6 @@ namespace UnityEngine.Localization
             data["uploadFiles"] = filesToUpload;
 
             var jsonData = Json.Serialize(data);
-            // Debug.Log("UploadSourceFile jsonData");
-            // Debug.Log(jsonData);
             Downloader.Response response;
             Downloader.SendGetPostData(serverUrl
                             + "/v1/projects/" + TranslateProject.GetProjectDataForEditor().id
@@ -183,7 +203,7 @@ namespace UnityEngine.Localization
                             + "/files"
                             , jsonData
                             , out response);
-            Debug.Log("UploadSourceFile\n" + response);
+            // Debug.Log("UploadSourceFile\n" + response);
         }
 
         // Appears to work OK
@@ -202,8 +222,8 @@ namespace UnityEngine.Localization
             var convertedContent = File.ReadAllText(tempPath);
             File.Delete(tempPath);
 
-            Debug.Log("GetFileDataInPoFormat > targetLang: " + targetLanguage);
-            Debug.Log("GetFileDataInPoFormat > convertedContent:\n" + convertedContent);
+            // Debug.Log("GetFileDataInPoFormat > targetLang: " + targetLanguage);
+            // Debug.Log("GetFileDataInPoFormat > convertedContent:\n" + convertedContent);
 
             return convertedContent;
         }
@@ -233,10 +253,12 @@ namespace UnityEngine.Localization
             filePathOnServer = WWW.EscapeURL(filePathOnServer);
 
             Downloader.Response response;
-            Downloader.SendGetData(serverUrl
-                            + "/v1/files/translation-file?projectID=1&languageID=ja&branch=topics&file="
-                            + filePathOnServer,
-                            out response);
+            Downloader.SendGetData(serverUrl // TODO: Get values here from API.
+                        + "/v1/files/translation-file?projectID=" + TranslateProject.GetProjectDataForEditor().id
+                        + "&languageID=" + serverLanguageCodes["Japanese"]
+                        + "&branch=" + TranslateProject.GetProjectDataForEditor().currentBranch 
+                        + "&file=" + filePathOnServer,
+                        out response);
             translationFile.content = response.body;
 
             return translationFile;
@@ -376,6 +398,8 @@ namespace UnityEngine.Localization
                 }
             }
         }
+
+        
     }
 
     // TODO: Might want to clean up the structure or get rid of it altogether, 
