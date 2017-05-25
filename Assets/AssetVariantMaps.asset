@@ -21,7 +21,13 @@ MonoBehaviour:
       assetVariants:
       - variantTag: dk
         dstObject: {fileID: 2800000, guid: fe4ad9dc42c3440fa8d7eec05cb8dbbb, type: 3}
+      - variantTag: fr
+        dstObject: {fileID: 2800000, guid: c9ef29d77381b4933879582f204a110d, type: 3}
     - srcObject: {fileID: 2800000, guid: ee1701bd3676de14c86a6f7cedc08177, type: 3}
       assetVariants:
       - variantTag: dk
         dstObject: {fileID: 2800000, guid: ba5eb0f0194c143b49fd18eb83925e9c, type: 3}
+    - srcObject: {fileID: 2800000, guid: aadd163a1083b694cb476d64aa66c8a2, type: 3}
+      assetVariants:
+      - variantTag: dk
+        dstObject: {fileID: 2800000, guid: cf70e418ddc8b4fc18e71118257d7d73, type: 3}
