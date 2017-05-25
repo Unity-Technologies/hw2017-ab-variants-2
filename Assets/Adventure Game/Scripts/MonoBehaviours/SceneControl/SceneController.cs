@@ -42,7 +42,6 @@ public class SceneController : MonoBehaviour
         StartCoroutine (Fade (0f));
     }
 
-
     // This is the main external point of contact and influence from the rest of the project.
     // This will be called by a SceneReaction when the player wants to switch scenes.
     public void FadeAndLoadScene (SceneReaction sceneReaction)

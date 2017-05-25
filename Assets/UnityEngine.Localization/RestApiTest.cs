@@ -43,38 +43,38 @@ namespace UnityEngine.Localization
             {"Russian", "ru"}
         };
 
-        // Works. https://new-translate-web-staging.unity3d.jp/api/user-api/get-user-info
-        [MenuItem ("Tests/Rest/User Info")]
-        public static void GetUserInfo()
-        {
-            Downloader.Response response;
-            Downloader.SendGetData(serverUrl + "/v1/user/info", out response);
-            Debug.Log(response);
-        }
+        // // Works. https://new-translate-web-staging.unity3d.jp/api/user-api/get-user-info
+        // [MenuItem ("Tests/Rest/User Info")]
+        // public static void GetUserInfo()
+        // {
+        //     Downloader.Response response;
+        //     Downloader.SendGetData(serverUrl + "/v1/user/info", out response);
+        //     Debug.Log(response);
+        // }
 
-        // Works. https://new-translate-web-staging.unity3d.jp/api/project-api/get-project-list
-        [MenuItem ("Tests/Rest/Get Projects List")]
-        public static void GetProjectsList()
-        {
-            Downloader.Response response;
-            Downloader.SendGetData(serverUrl + "/v1/projects?languageID=ru", out response);//?languageID=ru gets ignored?
-            var projectsList = JsonUtility.FromJson<TranslateProjectList>(response.body);
+        // // Works. https://new-translate-web-staging.unity3d.jp/api/project-api/get-project-list
+        // [MenuItem ("Tests/Rest/Get Projects List")]
+        // public static void GetProjectsList()
+        // {
+        //     Downloader.Response response;
+        //     Downloader.SendGetData(serverUrl + "/v1/projects?languageID=ru", out response);//?languageID=ru gets ignored?
+        //     var projectsList = JsonUtility.FromJson<TranslateProjectList>(response.body);
 
-            Debug.Log(projectsList.projects.Length);
-        }
+        //     Debug.Log(projectsList.projects.Length);
+        // }
 
         // Works. https://new-translate-web-staging.unity3d.jp/api/project-api/get-project
-        [MenuItem ("Tests/Rest/Get Project Info")]
-        public static void GetProjectInfo()
-        {
-            Downloader.Response response;
-            Downloader.SendGetData(serverUrl + "/v1/projects/" + TranslateProject.GetProjectDataForEditor().id, out response);
+        // [MenuItem ("Tests/Rest/Get Project Info")]
+        // public static void GetProjectInfo()
+        // {
+        //     Downloader.Response response;
+        //     Downloader.SendGetData(serverUrl + "/v1/projects/" + TranslateProject.GetProjectDataForEditor().id, out response);
 
-            var projectInfo = Json.Deserialize(response.body) as Dictionary<string, object>;
+        //     var projectInfo = Json.Deserialize(response.body) as Dictionary<string, object>;
 
-            foreach (KeyValuePair<string, object> entry in projectInfo)
-                Debug.Log("Key: " + entry.Key + " Value: " + entry.Value);
-        }
+        //     foreach (KeyValuePair<string, object> entry in projectInfo)
+        //         Debug.Log("Key: " + entry.Key + " Value: " + entry.Value);
+        // }
 
         // Works. https://new-translate-web-staging.unity3d.jp/api/project-api/get-file-list
         [MenuItem ("Tests/Rest/Get List of Files")]
@@ -114,7 +114,7 @@ namespace UnityEngine.Localization
         static bool IsSourceFileOnServerAndIsNotModified(string localFilePath)
         {
             string serverFilePath = GetServerPathForLocalPath(localFilePath);
-            var absoluteFilePath = Path.Combine(Application.dataPath, localFilePath);
+            var absoluteFilePath = GetAbsoluteFilePath(localFilePath);
             var md5 = GetMD5HashForFileContent(absoluteFilePath); // TODO: Fix it. Hash for converted POT file and not for the LANG file.
             var requestURL = serverUrl + "/v1/files/source-file/actions/verify?"
                                 + "projectID=" + TranslateProject.GetProjectDataForEditor().id
@@ -209,8 +209,7 @@ namespace UnityEngine.Localization
         // Appears to work OK
         private static string GetFileDataInPoFormat(string localFilePath, SystemLanguage targetLanguage)
         {
-            var assetPath = Path.Combine("Assets", localFilePath);
-            var db = AssetDatabase.LoadAssetAtPath<MultiLangStringDatabase>(assetPath);
+            var db = GetMultiLangStringDB(localFilePath);
             if (db == null)
             {
                 throw new Exception("didn't load asset");
@@ -255,7 +254,7 @@ namespace UnityEngine.Localization
             Downloader.Response response;
             Downloader.SendGetData(serverUrl // TODO: Get values here from API.
                         + "/v1/files/translation-file?projectID=" + TranslateProject.GetProjectDataForEditor().id
-                        + "&languageID=" + serverLanguageCodes["Japanese"]
+                        + "&languageID=" + serverLanguageCodes[SystemLanguage.Japanese.ToString()]
                         + "&branch=" + TranslateProject.GetProjectDataForEditor().currentBranch 
                         + "&file=" + filePathOnServer,
                         out response);
@@ -272,17 +271,48 @@ namespace UnityEngine.Localization
             var tempPath = Path.GetTempFileName();
             File.WriteAllText(tempPath, translationFile.content);
 
-            var db = ScriptableObject.CreateInstance<MultiLangStringDatabase>();
-            POUtility.ImportFile(db, tempPath, SystemLanguage.English, true); // TODO: Update language from settings
+            var db = GetMultiLangStringDB(translationFile.pathOnServer);
+            POUtility.ImportFile(db, tempPath, SystemLanguage.English, true); // TODO: 1. Update reference language from settings. 2. Q.: When last param true and when false?
             File.Delete(tempPath);
+            
+            SaveLangDBFileAtPath(db, translationFile.pathOnServer);
+        }
 
-            var filePath = Path.Combine(Application.dataPath, translationFile.pathOnServer);
-            (new FileInfo(filePath)).Directory.Create();
-            AssetDatabase.Refresh();
+        private static void SaveLangDBFileAtPath(MultiLangStringDatabase db, string storeFilePath)
+        {
+            storeFilePath = Path.ChangeExtension(storeFilePath, ".asset");
+            var absoluteFilePath = GetAbsoluteFilePath(storeFilePath);
+            storeFilePath = Path.Combine("Assets", storeFilePath);
+            if (File.Exists(absoluteFilePath)) 
+            { // update existing asset
+                var existingDb = AssetDatabase.LoadMainAssetAtPath(storeFilePath) as MultiLangStringDatabase;
+                EditorUtility.CopySerialized(db, existingDb);
+                AssetDatabase.SaveAssets();
+            }
+            else
+            { // create new asset
+                (new FileInfo(absoluteFilePath)).Directory.Create();
+                AssetDatabase.Refresh();
+                AssetDatabase.CreateAsset(db, storeFilePath);
+            }
+        }
 
-            filePath = Path.Combine("Assets", translationFile.pathOnServer);
-            filePath = Path.ChangeExtension(filePath, ".asset");
-            AssetDatabase.CreateAsset(db, filePath);
+        // Loads existing LANG file if there's one, or generates new instance if there's none. 
+        private static MultiLangStringDatabase GetMultiLangStringDB(string localDbFilePath)
+        {
+            localDbFilePath = Path.ChangeExtension(localDbFilePath, ".asset");
+            var absoluteFilePath = GetAbsoluteFilePath(localDbFilePath);
+            if (File.Exists(absoluteFilePath))
+            {
+                var assetPath = Path.Combine("Assets", localDbFilePath);
+                return AssetDatabase.LoadAssetAtPath<MultiLangStringDatabase>(assetPath);
+            }
+            return ScriptableObject.CreateInstance<MultiLangStringDatabase>();
+        }
+
+        private static string GetAbsoluteFilePath(string localFilePath)
+        {
+            return Path.Combine(Application.dataPath, localFilePath);
         }
 
         // NOT COMPLETE IMPLEMENTATION. https://new-translate-web-staging.unity3d.jp/api/project-api/create-branch
