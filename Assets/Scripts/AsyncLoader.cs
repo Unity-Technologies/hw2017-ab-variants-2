@@ -10,16 +10,21 @@ public class AsyncLoader : MonoBehaviour {
     {
         public string address;
         public Transform parent;
+        public bool enabled;
     }
 
     public LoadInfo[] loadList;
 
-
 	void Start ()
     {
 		foreach(var item in loadList)
-            ResourceManager.InstantiateAsync<GameObject>(item.address).complete += (obj) => {
-                obj.result.transform.SetParent(item.parent, false);
-            };
+        {
+            if(item.enabled)
+            {
+                ResourceManager.InstantiateAsync<GameObject>(item.address).complete += (obj) => {
+                    obj.result.transform.SetParent(item.parent, false);
+                };
+            }
+        }
 	}
 }

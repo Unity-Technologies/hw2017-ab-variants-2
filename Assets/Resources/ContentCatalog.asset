@@ -32,11 +32,6 @@ MonoBehaviour:
     m_method: bundledasset
     m_dependencies:
     - Signs_d011dc496f6aa466b9ee6e63922ce464
-  - m_name: assets/adventure game/prefabs/smalllogohologram.prefab
-    m_id: assets/adventure game/prefabs/smalllogohologram.prefab
-    m_method: bundledasset
-    m_dependencies:
-    - SmallLogoHoloGram_70555508c70cbfb48bc821f173fabb76
   - m_name: assets/assetvariantmaps.asset
     m_id: assets/assetvariantmaps.asset
     m_method: bundledasset
@@ -60,9 +55,5 @@ MonoBehaviour:
     m_dependencies: []
   - m_name: Signs_d011dc496f6aa466b9ee6e63922ce464
     m_id: bundles/StandaloneOSXIntel64/Signs_d011dc496f6aa466b9ee6e63922ce464
-    m_method: localassetbundle
-    m_dependencies: []
-  - m_name: SmallLogoHoloGram_70555508c70cbfb48bc821f173fabb76
-    m_id: bundles/StandaloneOSXIntel64/SmallLogoHoloGram_70555508c70cbfb48bc821f173fabb76
     m_method: localassetbundle
     m_dependencies: []

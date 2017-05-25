@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.26909, g: 0.20242216, b: 0.5294118, a: 1}
+  m_AmbientSkyColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -9385,6 +9385,53 @@ MonoBehaviour:
   delay: 0
   animator: {fileID: 1876984103}
   trigger: FlyAway
+--- !u!1001 &609759967
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1622549675}
+    m_Modifications:
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10.822483
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10.885503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.2829485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+      propertyPath: m_RootOrder
+      value: 42
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d011dc496f6aa466b9ee6e63922ce464, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &609759968 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4467702571495708, guid: d011dc496f6aa466b9ee6e63922ce464,
+    type: 2}
+  m_PrefabInternal: {fileID: 609759967}
 --- !u!1 &610976921
 GameObject:
   m_ObjectHideFlags: 0
@@ -23669,6 +23716,7 @@ Transform:
   - {fileID: 1798788373}
   - {fileID: 898471291}
   - {fileID: 243435580}
+  - {fileID: 609759968}
   m_Father: {fileID: 1901607198}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26201,10 +26249,13 @@ MonoBehaviour:
   loadList:
   - address: assets/adventure game/prefabs/marketcoffeesign.prefab
     parent: {fileID: 1901607198}
+    enabled: 1
   - address: assets/adventure game/prefabs/marketfishsignneon.prefab
     parent: {fileID: 1901607198}
+    enabled: 1
   - address: assets/adventure game/prefabs/signs.prefab
     parent: {fileID: 1622549675}
+    enabled: 1
 --- !u!4 &1903129859
 Transform:
   m_ObjectHideFlags: 0
