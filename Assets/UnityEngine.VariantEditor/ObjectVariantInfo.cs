@@ -11,14 +11,14 @@ namespace UnityEngine.Variant
     [Serializable]
     public class AxisSelection
     {
-        public VariantAxis ax;
-        public Variant v;
+        public string axName;
+        public string vShortName;
 
         public AxisSelection() {
         }
         public AxisSelection(VariantAxis ax, Variant v) {
-            this.ax = ax;
-            this.v = v;
+            axName = ax.Name;
+            vShortName = v.ShortName;
         }
     }
 
@@ -59,11 +59,11 @@ namespace UnityEngine.Variant
             string dv = "";
             foreach (var ax in VariantOperation.Axis) {
                 sb.Append (dv);
-                var sel = m_selections.Find (s => s.ax == ax);
+                var sel = m_selections.Find (s => s.axName == ax.Name);
                 if (sel == null) {
                     sb.Append ("*");
                 } else {
-                    sb.Append (sel.v.ShortName);
+                    sb.Append (sel.vShortName);
                 }
                 dv = "-";
             }
@@ -85,14 +85,12 @@ namespace UnityEngine.Variant
         public static readonly float kWIDTH  = 120f;
         public static readonly float kHEIGHT = 200f;
 
-        private int m_windowId;
         private Rect m_baseRect;
         private int m_index;
 
         public ObjectVariantInfo(UnityEngine.Object o)
         {
             m_obj = o;
-            m_windowId = s_windowId++;
             m_destinations = new List<ObjectVariantDestinationInfo> ();
             m_removing = new List<ObjectVariantDestinationInfo> ();
         }
@@ -138,7 +136,7 @@ namespace UnityEngine.Variant
             m_baseRect = new Rect(20f, 20f + (Height + 20f) * index, kWIDTH * (m_destinations.Count + 1), Height);
 
             GUIStyle s = GUI.skin.FindStyle("flow node 0");
-            GUI.Window(m_windowId, m_baseRect, DrawThisObject, string.Empty,  s);
+            GUI.Window(index, m_baseRect, DrawThisObject, string.Empty,  s);
         }
 
         private void DrawThisObject(int id) {
@@ -208,23 +206,23 @@ namespace UnityEngine.Variant
                 var array = items.ToArray ();
 
                 int popIndex = 0;
-                AxisSelection s = dstInfo.Selections.Find(x => x.ax == ax);
+                AxisSelection s = dstInfo.Selections.Find(x => x.axName == ax.Name);
                 if (s != null) {
-                    popIndex = ax.Variants.FindIndex (v => v == s.v) + 1;
+                    popIndex = ax.Variants.FindIndex (v => v.ShortName == s.vShortName) + 1;
                 }
 
                 var newIndex = EditorGUILayout.Popup(popIndex, array, GUILayout.Width(100f));
                 if(newIndex != popIndex) {
                     if(newIndex == 0) {
-                        dstInfo.Selections.RemoveAll (sel => sel.ax == ax);
+                        dstInfo.Selections.RemoveAll (sel => sel.axName == ax.Name);
                     }
                     else  {
                         if (s == null) {
                             s = new AxisSelection ();
-                            s.ax = ax;
+                            s.axName = ax.Name;
                             dstInfo.Selections.Add (s);
                         }
-                        s.v = ax.Variants.ElementAt (newIndex -1);
+                        s.vShortName = (newIndex == 0)? "" : ax.Variants.ElementAt (newIndex -1).ShortName;
                     }
                     SetRemapConfig (dstInfo);
                     VariantOperation.SetDBDirty ();

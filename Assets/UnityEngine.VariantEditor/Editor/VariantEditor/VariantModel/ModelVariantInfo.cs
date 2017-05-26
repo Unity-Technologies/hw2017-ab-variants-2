@@ -65,11 +65,11 @@ namespace UnityEngine.Variant
     {
         protected VariantAxisInfo m_Parent;
         protected bool m_Dirty;
-        protected Variant m_variant;
+        protected string m_variantName;
 
         public VariantInfo(Variant v, VariantAxisInfo parent)
         {
-            m_variant = v;
+            m_variantName = v.Name;
             m_Parent = parent;
         }
 
@@ -78,19 +78,20 @@ namespace UnityEngine.Variant
 
         public Variant AssignedVariant {
             get {
-                return m_variant;
+                return VariantOperation.GetOperation().GetAxisByName(m_Parent.Name).GetVariantByName(m_variantName);
             }
         }
 
         public string Name
         {
-            get { return m_variant.Name; }
-            set { m_variant.Name = value; }
+            get { return m_variantName; }
+            set { m_variantName = value;
+                AssignedVariant.Name = value;}
         }
 
         public int nameHashCode
         {
-            get { return m_variant.ShortName.GetHashCode(); }
+            get { return AssignedVariant.ShortName.GetHashCode(); }
         }
 
         public void HandleDelete()
@@ -107,20 +108,20 @@ namespace UnityEngine.Variant
     public class VariantAxisInfo
     {
         protected List<VariantInfo> m_Children;
-        protected VariantAxis m_axis;
+        protected string m_axisName;
 
         public VariantAxis AssignedAxis {
             get {
-                return m_axis;
+                return VariantOperation.GetOperation().GetAxisByName(m_axisName);
             }
         }
 
         public VariantAxisInfo(VariantAxis axis)
         {
-            m_axis = axis;
+            m_axisName = axis.Name;
             m_Children = new List<VariantInfo>();
 
-            foreach (var v in m_axis.Variants) {
+            foreach (var v in axis.Variants) {
                 m_Children.Add (new VariantInfo(v, this));
             }
         }
@@ -142,27 +143,28 @@ namespace UnityEngine.Variant
 
         public string Name
         {
-            get { return m_axis.Name; }
+            get { return m_axisName; }
             set {
-                m_axis.Name = value;
+                m_axisName = value;
+                AssignedAxis.Name = value;
             }
         }
 
         public int nameHashCode
         {
-            get { return m_axis.Name.GetHashCode(); }
+            get { return AssignedAxis.Name.GetHashCode(); }
         }
 
         public void HandleDelete()
         {
-            VariantOperation.GetOperation().RemoveVariantAxis (m_axis);
+            VariantOperation.GetOperation().RemoveVariantAxis (AssignedAxis);
             m_Children.Clear();
         }
 
         public bool HandleChildDelete(VariantInfo child)
         {
             m_Children.Remove (child);
-            VariantOperation.GetOperation().RemoveVariantFromVariantAxis (child.AssignedVariant, m_axis);
+            VariantOperation.GetOperation().RemoveVariantFromVariantAxis (child.AssignedVariant, AssignedAxis);
 
             return true;
         }

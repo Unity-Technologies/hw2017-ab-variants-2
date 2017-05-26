@@ -66,6 +66,10 @@ namespace UnityEngine.Variant
             m_currentSelection = null;
         }
 
+        public Variant GetVariantByName(string name) {
+            return m_variants.Find (x => x.Name == name);
+        }
+
         public void ResetSelection() {
             m_currentSelection = null;
             VariantOperation.GetOperation ().ApplyRemap ();
@@ -282,6 +286,10 @@ namespace UnityEngine.Variant
             return newAxis;
         }
 
+        public VariantAxis GetAxisByName(string name) {
+            return m_axis.Find (x => x.Name == name);
+        }
+
         public void RemoveVariantAxis(VariantAxis ax) {
             m_axis.Remove(ax);
             SetDBDirty ();
@@ -360,7 +368,7 @@ namespace UnityEngine.Variant
             foreach (var ax in VariantOperation.Axis) {
                 sb.Append (dv);
                 var sel = ax.CurrentSelection;
-                if (sel == null) {
+                if (sel == null || sel.ShortName == string.Empty) {
                     sb.Append ("*");
                 } else {
                     sb.Append (sel.ShortName);
