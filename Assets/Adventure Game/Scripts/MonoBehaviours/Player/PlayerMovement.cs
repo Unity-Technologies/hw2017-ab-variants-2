@@ -51,8 +51,8 @@ public class PlayerMovement : MonoBehaviour
         Transform startingPosition = StartingPosition.FindStartingPosition(startingPositionName);
 
         // Set the player's position and rotation based on the starting position.
-        transform.position = startingPosition.position;
-        transform.rotation = startingPosition.rotation;
+//        transform.position = startingPosition.position;
+//        transform.rotation = startingPosition.rotation;
 
         // Set the initial destination as the player's current position.
         destinationPosition = transform.position;
