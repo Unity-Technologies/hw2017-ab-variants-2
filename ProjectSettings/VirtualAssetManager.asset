@@ -33,3 +33,4 @@ VirtualAssetManager:
       second:
         Danish: {fileID: 8300000, guid: 86e5890520e1042e6a9564f19d204dbf, type: 3}
         French: {fileID: 8300000, guid: 655a0a8de665e4ac2ae86697551bac06, type: 3}
+        Hindi: {fileID: 8300000, guid: b3e0c9c7e5b004efabae22610e3ace4f, type: 3}
