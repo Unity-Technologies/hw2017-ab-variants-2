@@ -13,7 +13,7 @@ public class ExtractKeysWindows : EditorWindow
 	public MultiLangStringDatabase db;
 	public bool parseScenes = true;
 
-	private HashSet<string> keys;
+	private Dictionary<string, HashSet<string>> keys;
 
 	public Scene[] scenes; 
 
@@ -33,7 +33,7 @@ public class ExtractKeysWindows : EditorWindow
 		{
 			if (GUILayout.Button ("Start")) 
 			{
-				keys = new HashSet<string> ();
+				keys = new Dictionary<string, HashSet<string>> ();
 
 				if (parseScenes)
 					IterateScenes ();
@@ -44,7 +44,10 @@ public class ExtractKeysWindows : EditorWindow
 		{
 			foreach (var key in keys) 
 			{
-				EditorGUILayout.LabelField (key);
+				foreach (var c in key.Value)
+					EditorGUILayout.LabelField ("#: " + c);
+				EditorGUILayout.LabelField (key.Key);
+				EditorGUILayout.Space ();
 			}
 		}
 	}
@@ -62,8 +65,8 @@ public class ExtractKeysWindows : EditorWindow
 			var textObjects = Object.FindObjectsOfType<UnityEngine.UI.Text> ();
 			foreach (var to in textObjects) 
 			{
-				if(!string.IsNullOrEmpty(to.text))
-					keys.Add(to.text);
+				if (!string.IsNullOrEmpty (to.text))
+					AddKey (to.text, path + "::" + GetGameObjectPath(to.gameObject) + "/Text:text");
 			}
 
 			// UI Inout
@@ -71,7 +74,7 @@ public class ExtractKeysWindows : EditorWindow
 			foreach (var io in inputObjects) 
 			{
 				if(!string.IsNullOrEmpty(io.text))
-					keys.Add(io.text);
+					AddKey (io.text, path + "::" + GetGameObjectPath(io.gameObject) + "/InputField:text");
 			}
 
 			// Text Mesh
@@ -79,12 +82,10 @@ public class ExtractKeysWindows : EditorWindow
 			foreach (var tm in textMeshObjects) 
 			{
 				if(!string.IsNullOrEmpty(tm.text))
-					keys.Add(tm.text);
+					AddKey (tm.text, path + "::" + GetGameObjectPath(tm.gameObject) + "/TextMesh:text");
 			}
 
 			// Reaction Collection - specific to this project. We should do relfection here for user scripts.
-
-
 			var reactions = Object.FindObjectsOfType<ReactionCollection> ();
 			foreach (var r in reactions) 
 			{
@@ -92,7 +93,7 @@ public class ExtractKeysWindows : EditorWindow
 				{
 					TextReaction tr = currentReaction as TextReaction;
 					if (tr)
-						keys.Add (tr.message);
+						AddKey (tr.message, path + "::" + GetGameObjectPath(r.gameObject) + "/TextReaction:message");
 				}
 			}
 		}
@@ -102,6 +103,26 @@ public class ExtractKeysWindows : EditorWindow
 		UpdateDB ();
 	}
 
+	void AddKey(string key, string comment)
+	{
+		if (!keys.ContainsKey (key)) {
+			keys.Add (key, new HashSet<string>());
+		}
+
+		keys [key].Add (comment);
+	}
+
+	public static string GetGameObjectPath(GameObject obj)
+	{
+		string path = "/" + obj.name;
+		while (obj.transform.parent != null)
+		{
+			obj = obj.transform.parent.gameObject;
+			path = "/" + obj.name + path;
+		}
+		return path;
+	}
+
 	void UpdateDB()
 	{
 		if (db == null)
@@ -109,7 +130,10 @@ public class ExtractKeysWindows : EditorWindow
 
 		foreach (var key in keys) 
 		{
-			db.AddTextEntry (key);
+			db.AddTextEntry (key.Key);
+			string[] array = new string[key.Value.Count];
+			key.Value.CopyTo (array);
+			db.SetTextEntry (SystemLanguage.English, key.Key, key.Key, array);
 		}
 	}
 }
