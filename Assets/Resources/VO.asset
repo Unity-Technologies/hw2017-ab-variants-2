@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ec8e69de888403e8dbcb61e1d5679f, type: 3}
+  m_Name: VO
+  m_EditorClassIdentifier: 
+  m_activeTag: 
+  m_axis:
+  - m_name: Languages
+    m_variants:
+    - m_name: Danish
+      m_shortName: l
+      m_isReadOnly: 1
+    - m_name: English
+      m_shortName: l1
+      m_isReadOnly: 1
+    - m_name: French
+      m_shortName: l2
+      m_isReadOnly: 1
+    - m_name: German
+      m_shortName: l3
+      m_isReadOnly: 1
+    - m_name: Japanese
+      m_shortName: l4
+      m_isReadOnly: 1
+    m_type: 0
+  - m_name: Quality Settings
+    m_variants:
+    - m_name: Fastest
+      m_shortName: q
+      m_isReadOnly: 1
+    - m_name: Good
+      m_shortName: q1
+      m_isReadOnly: 1
+    - m_name: Beautiful
+      m_shortName: q2
+      m_isReadOnly: 1
+    m_type: 1
+  m_objects:
+  - m_obj: {fileID: 2800000, guid: ee1701bd3676de14c86a6f7cedc08177, type: 3}
+    m_destinations:
+    - m_dstObj: {fileID: 2800000, guid: ba5eb0f0194c143b49fd18eb83925e9c, type: 3}
+      m_selections:
+      - ax:
+          m_name: Languages
+          m_variants:
+          - m_name: Danish
+            m_shortName: l
+            m_isReadOnly: 1
+          - m_name: English
+            m_shortName: l1
+            m_isReadOnly: 1
+          - m_name: French
+            m_shortName: l2
+            m_isReadOnly: 1
+          - m_name: German
+            m_shortName: l3
+            m_isReadOnly: 1
+          - m_name: Japanese
+            m_shortName: l4
+            m_isReadOnly: 1
+          m_type: 0
+        v:
+          m_name: Danish
+          m_shortName: l
+          m_isReadOnly: 1
+      - ax:
+          m_name: Languages
+          m_variants:
+          - m_name: Danish
+            m_shortName: l
+            m_isReadOnly: 1
+          - m_name: English
+            m_shortName: l1
+            m_isReadOnly: 1
+          - m_name: French
+            m_shortName: l2
+            m_isReadOnly: 1
+          - m_name: German
+            m_shortName: l3
+            m_isReadOnly: 1
+          - m_name: Japanese
+            m_shortName: l4
+            m_isReadOnly: 1
+          m_type: 0
+        v:
+          m_name: Danish
+          m_shortName: l
+          m_isReadOnly: 1
+      - ax:
+          m_name: Languages
+          m_variants:
+          - m_name: Danish
+            m_shortName: l
+            m_isReadOnly: 1
+          - m_name: English
+            m_shortName: l1
+            m_isReadOnly: 1
+          - m_name: French
+            m_shortName: l2
+            m_isReadOnly: 1
+          - m_name: German
+            m_shortName: l3
+            m_isReadOnly: 1
+          - m_name: Japanese
+            m_shortName: l4
+            m_isReadOnly: 1
+          m_type: 0
+        v:
+          m_name: Danish
+          m_shortName: l
+          m_isReadOnly: 1
+    - m_dstObj: {fileID: 2800000, guid: bda04d30147f8424b9cbc86911c692a2, type: 3}
+      m_selections:
+      - ax:
+          m_name: Languages
+          m_variants:
+          - m_name: Danish
+            m_shortName: l
+            m_isReadOnly: 1
+          - m_name: English
+            m_shortName: l1
+            m_isReadOnly: 1
+          - m_name: French
+            m_shortName: l2
+            m_isReadOnly: 1
+          - m_name: German
+            m_shortName: l3
+            m_isReadOnly: 1
+          - m_name: Japanese
+            m_shortName: l4
+            m_isReadOnly: 1
+          m_type: 0
+        v:
+          m_name: Japanese
+          m_shortName: l4
+          m_isReadOnly: 1
+      - ax:
+          m_name: Languages
+          m_variants:
+          - m_name: Danish
+            m_shortName: l
+            m_isReadOnly: 1
+          - m_name: English
+            m_shortName: l1
+            m_isReadOnly: 1
+          - m_name: French
+            m_shortName: l2
+            m_isReadOnly: 1
+          - m_name: German
+            m_shortName: l3
+            m_isReadOnly: 1
+          - m_name: Japanese
+            m_shortName: l4
+            m_isReadOnly: 1
+          m_type: 0
+        v:
+          m_name: Japanese
+          m_shortName: l4
+          m_isReadOnly: 1
+      - ax:
+          m_name: Languages
+          m_variants:
+          - m_name: Danish
+            m_shortName: l
+            m_isReadOnly: 1
+          - m_name: English
+            m_shortName: l1
+            m_isReadOnly: 1
+          - m_name: French
+            m_shortName: l2
+            m_isReadOnly: 1
+          - m_name: German
+            m_shortName: l3
+            m_isReadOnly: 1
+          - m_name: Japanese
+            m_shortName: l4
+            m_isReadOnly: 1
+          m_type: 0
+        v:
+          m_name: Japanese
+          m_shortName: l4
+          m_isReadOnly: 1
+    m_removing: []

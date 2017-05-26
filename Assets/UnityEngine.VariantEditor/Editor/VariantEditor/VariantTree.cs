@@ -70,12 +70,19 @@ namespace UnityEngine.Variant
 
         protected override void SelectionChanged(IList<int> selectedIds)
         {
-//            foreach (var id in selectedIds)
-//            {
-//                var item = FindItem(id, rootItem) as AssetBundleModel.BundleTreeItem;
-//                item.bundle.RefreshAssetList();
-//                selectedBundles.Add(item.bundle);
-//            }
+            if (selectedIds.Count == 1) {
+                var selected = FindItem(selectedIds[0], rootItem);
+
+                if (selected is VariantAxisTreeItem)
+                {
+                    VariantAxisTreeItem item = selected as VariantAxisTreeItem;
+                    item.Info.AssignedAxis.ResetSelection ();
+                }
+                if (selected is VariantTreeItem) {
+                    VariantTreeItem item = selected as VariantTreeItem;
+                    item.Info.parent.AssignedAxis.SelectVariant (item.Info.AssignedVariant);
+                }
+            }
         }
 
         public override void OnGUI(Rect rect)

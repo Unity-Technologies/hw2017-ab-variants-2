@@ -61,16 +61,27 @@ namespace UnityEngine.Variant
                 if (GUILayout.Button("Apply All Again", EditorStyles.toolbarButton)) {
                     ApplyAll ();
                 }
+                if (GUILayout.Button("Reset ll", EditorStyles.toolbarButton)) {
+                    ApplyAll ();
+                }
                 GUILayout.FlexibleSpace();
             }
 
         }
         void ApplyAll () {
+            VariantOperation.GetOperation ().ResetRemap ();
+
             VariantOperation.GetOperation ().RemoveVariantMapping ();
 
             foreach (var objInfo in VariantOperation.Objects) {
                 objInfo.SetAllRemapConfig ();
             }
+
+            VariantOperation.GetOperation ().ApplyRemap();
+        }
+
+        void ResetAll() {
+            VariantOperation.GetOperation ().ResetRemap ();
         }
     }
 }

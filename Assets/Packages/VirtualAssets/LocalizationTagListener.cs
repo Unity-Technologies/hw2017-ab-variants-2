@@ -12,10 +12,11 @@ public class LocalizationTagListener : MonoBehaviour
     // Listen for language changes and update the current tag
     void OnApplicationLanguageChanged()
     {
-        var newTag = Application.currentLanguage.ToString();
-        Debug.Log ("Language changed to:" + newTag);
-
-        UpdateActiveTag(newTag);
+//        var newTag = Application.currentLanguage.ToString();
+//        Debug.Log ("Language changed to:" + newTag);
+//
+//        UpdateActiveTag(newTag);
+        UnityEngine.Variant.VariantOperation.GetOperation().SelectLanguage(Application.currentLanguage);
     }
 
     void UpdateActiveTag(string newTag)

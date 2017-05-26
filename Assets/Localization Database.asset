@@ -1160,10 +1160,10 @@ MonoBehaviour:
     - m_value: 
       m_Comments: []
       m_pluralValues: []
-    - m_value: Get lost(Japanese)
+    - m_value: "\u51FA\u3066\u3044\u304D\u306A\uFF01"
       m_Comments: []
       m_pluralValues: []
-    - m_value: Fresh coffee!  Only one coin! - Japanese
+    - m_value: "\u6DF9\u308C\u305F\u3066\u306E\u30B3\u30FC\u30D2\u30FC!\u30B3\u30A4\u30F3\u4E00\u679A!"
       m_Comments: []
       m_pluralValues: []
     - m_value: 
